@@ -236,39 +236,41 @@
 <body class="font-sans antialiased overflow-x-hidden">
 
     <!-- Navigation - Agora na mesma cor do footer (forest #064E3B) -->
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center">
-                    <!-- Logo SEM filtro - cores originais -->
-                    <img src="Logo.png" alt="Menezes Eco Consult" class="logo-image">
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#servicos" class="nav-link text-sm font-medium">Serviços</a>
-                    <a href="#metodo" class="nav-link text-sm font-medium">O Método</a>
-                    <a href="#industrias" class="nav-link text-sm font-medium">Indústrias</a>
-                    <a href="#contato" class="px-6 py-2.5 bg-teal-accent text-forest text-sm font-medium rounded-full hover:bg-opacity-90 transition-all shadow-inner-soft">
-                        Consultoria Express
-                    </a>
-                </div>
-                
-                <button class="md:hidden mobile-menu-btn" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6 text-white"></i>
-                </button>
+<nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <div class="flex items-center">
+                <!-- Logo SEM filtro - cores originais -->
+                <img src="Logo.png" alt="Menezes Eco Consult" class="logo-image">
             </div>
-        </div>
-        
-        <!-- Mobile Menu - Também ajustado para a cor forest -->
-        <div class="hidden md:hidden bg-forest border-t border-white/10" id="mobile-menu">
-            <div class="px-6 py-4 space-y-3">
-                <a href="#servicos" class="block text-white/80 hover:text-white">Serviços</a>
-                <a href="#metodo" class="block text-white/80 hover:text-white">O Método</a>
-                <a href="#industrias" class="block text-white/80 hover:text-white">Indústrias</a>
-                <a href="#contato" class="block text-teal-accent font-medium">Consultoria Express</a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#servicos" class="nav-link text-sm font-medium">Serviços</a>
+                <a href="#metodo" class="nav-link text-sm font-medium">O Método</a>
+                <a href="#industrias" class="nav-link text-sm font-medium">Indústrias</a>
+                <!-- Botão alterado para BRANCO com texto forest -->
+                <a href="#contato" class="px-6 py-2.5 bg-white text-forest text-sm font-medium rounded-full hover:bg-opacity-90 transition-all shadow-inner-soft">
+                    Consultoria Express
+                </a>
             </div>
+            
+            <button class="md:hidden mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-6 h-6 text-white"></i>
+            </button>
         </div>
-    </nav>
+    </div>
+    
+    <!-- Mobile Menu - Também ajustado para a cor forest -->
+    <div class="hidden md:hidden bg-forest border-t border-white/10" id="mobile-menu">
+        <div class="px-6 py-4 space-y-3">
+            <a href="#servicos" class="block text-white/80 hover:text-white">Serviços</a>
+            <a href="#metodo" class="block text-white/80 hover:text-white">O Método</a>
+            <a href="#industrias" class="block text-white/80 hover:text-white">Indústrias</a>
+            <!-- Link do mobile menu alterado para BRANCO -->
+            <a href="#contato" class="block text-white font-medium">Consultoria Express</a>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
@@ -758,3 +760,4 @@
     </script>
 </body>
 </html>
+
