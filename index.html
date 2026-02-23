@@ -1,430 +1,1264 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NK BSK BRASIL | Official Elite Platform</title>
+    <title>Menezes Eco Consult | Engenharia Ambiental Premium</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap');
-        
-        :root {
-            --bsk-blue: #1e3a8a;
-            --bsk-yellow: #fbbf24;
-            --bsk-dark: #0f172a;
-            --bsk-black: #020617;
-        }
-
-        body { font-family: 'Outfit', sans-serif; background-color: var(--bsk-black); color: white; overflow-x: hidden; }
-        
-        /* Efeitos Visuais */
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .glass-highlight { background: rgba(30, 58, 138, 0.2); backdrop-filter: blur(15px); border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 0 30px rgba(37, 99, 235, 0.1); }
-        .hero-gradient { background: radial-gradient(circle at top right, rgba(30, 58, 138, 0.4), transparent); }
-        .btn-bsk { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .btn-bsk:active { transform: scale(0.95); }
-        
-        /* Utilitários */
-        .hidden-screen { display: none !important; }
-        .nav-btn-active { color: var(--bsk-yellow) !important; background: rgba(251, 191, 36, 0.1); border-right: 3px solid var(--bsk-yellow); }
-        .nav-btn-mobile-active { color: var(--bsk-yellow) !important; }
-
-        /* Animação Pulse para Seletiva */
-        @keyframes pulse-yellow {
-            0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(251, 191, 36, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
-        }
-        .pulse-btn { animation: pulse-yellow 2s infinite; }
-
-        /* Scroll Customizado */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bsk-black); }
-        ::-webkit-scrollbar-thumb { background: var(--bsk-blue); border-radius: 10px; }
-    </style>
-</head>
-<body>
-
-    <div id="screen-landing" class="min-h-screen">
-        
-        <nav class="fixed w-full z-[100] glass border-b border-white/5 px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="https://www.ogol.com.br/img/logos/equipas/61528_imgbank_1688381755.png" class="h-10" alt="Logo">
-                <span class="font-black italic text-xl tracking-tighter">NKBSK <span class="text-blue-500">BRASIL</span></span>
-            </div>
-            <button onclick="changeScreen('screen-app')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-full text-xs uppercase tracking-widest transition">
-                Área do Atleta <i class="fas fa-arrow-right ml-2"></i>
-            </button>
-        </nav>
-
-        <section class="relative pt-32 pb-10 px-6 hero-gradient text-center">
-            <div class="max-w-4xl mx-auto">
-                <div class="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500 text-yellow-500 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] mb-6 pulse-btn cursor-pointer">
-                    <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
-                    Próxima Seletiva: Araçoiaba da Serra (20/FEV)
-                </div>
-
-                <h1 class="text-5xl md:text-8xl font-black uppercase italic leading-none mb-8">
-                    Sua Carreira <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-yellow-500">Na Europa</span>
-                </h1>
-                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                    A única plataforma que utiliza <strong>Inteligência Artificial VEO 3</strong> para classificar seu talento e enviar seus dados diretamente para a Croácia.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="changeScreen('screen-app')" class="bg-yellow-500 text-black font-black px-10 py-5 rounded-xl uppercase italic tracking-wider btn-bsk shadow-lg shadow-yellow-500/20">
-                        Inscrever na Seletiva
-                    </button>
-                    <button class="bg-white/5 border border-white/10 px-10 py-5 rounded-xl font-bold uppercase italic hover:bg-white/10 transition">
-                        Ver Como Funciona
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 px-6 bg-gradient-to-b from-transparent to-blue-950/20">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <h2 class="text-3xl md:text-5xl font-black uppercase italic mb-6 leading-tight">
-                        Leve a <span class="text-blue-500">VEO 3</span> para seu <span class="text-yellow-500">Evento</span>
-                    </h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                        Sua copa, torneio ou clube pode ter tecnologia de elite. Contrate a <strong>NK BSK</strong> para gerenciar seu evento: entregamos gravação automatizada e cada atleta recebe um <strong>perfil digital exclusivo</strong> com seus melhores momentos.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-                        <div class="flex items-center gap-3">
-                            <div class="text-yellow-500 bg-yellow-500/10 p-3 rounded-lg"><i class="fas fa-file-invoice"></i></div>
-                            <span class="text-xs font-bold uppercase tracking-wider">Perfil Individual do Atleta</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="text-blue-500 bg-blue-500/10 p-3 rounded-lg"><i class="fas fa-bolt"></i></div>
-                            <span class="text-xs font-bold uppercase tracking-wider">Highlights via IA</span>
-                        </div>
-                    </div>
-                    <button class="w-full md:w-auto bg-white text-black font-black px-8 py-4 rounded-xl uppercase italic tracking-widest hover:bg-yellow-500 transition">
-                        Contratar para meu Evento
-                    </button>
-                </div>
-                
-                <div class="order-1 md:order-2 relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-yellow-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                    <div class="relative glass border-white/10 rounded-3xl overflow-hidden shadow-2xl">
-                        <video autoplay="true" loop="" playsinline="true" muted="" class="w-full aspect-video object-cover" poster="https://cdn.prod.website-files.com/65a1660e61e47f70a246ac5c%2F68874a2c155403b13e976287_Index%20Step%20kort%201%20V1%2016-9-poster-00001.jpg">
-                            <source src="https://cdn.prod.website-files.com/65a1660e61e47f70a246ac5c%2F68874a2c155403b13e976287_Index%20Step%20kort%201%20V1%2016-9-transcode.mp4" type="video/mp4">
-                            <source src="https://cdn.prod.website-files.com/65a1660e61e47f70a246ac5c%2F68874a2c155403b13e976287_Index%20Step%20kort%201%20V1%2016-9-transcode.webm" type="video/webm">
-                        </video>
-                        <div class="absolute bottom-4 right-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded border border-white/20">
-                            <p class="text-[8px] font-black uppercase tracking-[0.2em] text-white">Veo AI Intelligence</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 px-6 bg-slate-900/50 border-y border-white/5">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                <div class="glass-highlight p-2 rounded-3xl relative">
-                    <div class="absolute -top-4 -left-4 bg-red-600 text-white text-xs font-black uppercase px-3 py-1 rounded rotate-[-5deg] z-10">Gravação 4K AI</div>
-                    <div class="aspect-video rounded-2xl overflow-hidden bg-black">
-                        <video autoplay="true" loop="" playsinline="true" muted="" class="w-full h-full object-cover" poster="https://cdn.prod.website-files.com/65a1660e61e47f70a246ac5c%2F68874a66fed727684bc967e0_Index%20Step%20kort%203%20V1%2016-9-poster-00001.jpg">
-                            <source src="https://cdn.prod.website-files.com/65a1660e61e47f70a246ac5c%2F68874a66fed727684bc967e0_Index%20Step%20kort%203%20V1%2016-9-transcode.mp4" type="video/mp4">
-                            <source src="https://cdn.prod.website-files.com/65a1660e61e47f70a246ac5c%2F68874a66fed727684bc967e0_Index%20Step%20kort%203%20V1%2016-9-transcode.webm" type="video/webm">
-                        </video>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 class="text-3xl font-black uppercase italic mb-6">Tecnologia <span class="text-blue-500">VEO CAM 3</span></h2>
-                    <p class="text-gray-400 mb-6">Não dependemos de "olheiros" tradicionais. Utilizamos a câmera tática mais avançada do mundo.</p>
-                    
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-4">
-                            <div class="bg-blue-600/20 p-2 rounded-lg text-blue-500"><i class="fas fa-video"></i></div>
-                            <div>
-                                <h4 class="font-bold uppercase text-sm">Gravação Panorâmica</h4>
-                                <p class="text-xs text-gray-500">Captura o campo todo. Nenhum movimento seu sem a bola passa despercebido.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <div class="bg-yellow-500/20 p-2 rounded-lg text-yellow-500"><i class="fas fa-microchip"></i></div>
-                            <div>
-                                <h4 class="font-bold uppercase text-sm">Classificação via IA</h4>
-                                <p class="text-xs text-gray-500">Algoritmos analisam sua velocidade, passes e posicionamento para gerar seu Score Oficial.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 px-6 max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-black uppercase italic">O Processo <span class="text-yellow-500">NK BSK</span></h2>
-                <p class="text-gray-500 mt-2">Do gramado brasileiro aos estádios europeus.</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-4 text-center relative">
-                <div class="hidden md:block absolute top-12 left-0 w-full h-1 bg-gradient-to-r from-blue-900 via-blue-600 to-yellow-500 -z-10 transform -translate-y-1/2"></div>
-
-                <div class="glass p-6 rounded-2xl bg-black">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-2xl font-black border-4 border-slate-900 mb-4 text-blue-500">1</div>
-                    <h3 class="font-bold uppercase text-sm mb-2">Seletiva & Gravação</h3>
-                    <p class="text-xs text-gray-500">Você joga, a VEO 3 grava tudo. Sem cortes, sem edição maquiada.</p>
-                </div>
-
-                <div class="glass p-6 rounded-2xl bg-black">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-2xl font-black border-4 border-slate-900 mb-4 text-blue-400">2</div>
-                    <h3 class="font-bold uppercase text-sm mb-2">Classificação</h3>
-                    <p class="text-xs text-gray-500">Nossa equipe técnica gera seu relatório de desempenho e highlights.</p>
-                </div>
-
-                <div class="glass p-6 rounded-2xl bg-black">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-2xl font-black border-4 border-slate-900 mb-4 text-yellow-500">3</div>
-                    <h3 class="font-bold uppercase text-sm mb-2">Intercâmbio</h3>
-                    <p class="text-xs text-gray-500">Viagem para a Croácia, treinos no CT oficial e adaptação cultural.</p>
-                </div>
-
-                <div class="glass p-6 rounded-2xl bg-black border-2 border-yellow-500 shadow-[0_0_20px_rgba(251,191,36,0.2)]">
-                    <div class="w-16 h-16 mx-auto bg-yellow-500 rounded-full flex items-center justify-center text-2xl font-black border-4 border-black mb-4 text-black"><i class="fas fa-file-contract"></i></div>
-                    <h3 class="font-bold uppercase text-sm mb-2 text-yellow-500">Contratação</h3>
-                    <p class="text-xs text-gray-500">Aprovação final técnica e assinatura de contrato profissional.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-10 px-6 bg-blue-900 text-center">
-            <h2 class="text-2xl font-black uppercase italic mb-4">Próxima Parada: Araçoiaba da Serra - SP</h2>
-            <p class="mb-6 max-w-2xl mx-auto">Não perca a chance de ser monitorado pela nossa tecnologia. Vagas limitadas por posição.</p>
-            <div class="flex flex-wrap justify-center gap-4 text-xs font-bold uppercase tracking-widest">
-                <span class="bg-black/30 px-4 py-2 rounded"><i class="fas fa-map-marker-alt mr-2"></i> CT Araçoiaba</span>
-                <span class="bg-black/30 px-4 py-2 rounded"><i class="fas fa-calendar mr-2"></i> 20 de Fevereiro</span>
-                <span class="bg-black/30 px-4 py-2 rounded"><i class="fas fa-clock mr-2"></i> 08:00h</span>
-            </div>
-        </section>
-    </div>
-
-    <div id="screen-app" class="hidden-screen min-h-screen flex flex-col md:flex-row">
-        
-        <aside class="hidden md:flex w-64 flex-col bg-slate-950 border-r border-white/5 h-screen sticky top-0">
-            <div class="p-8">
-                <img src="https://www.ogol.com.br/img/logos/equipas/61528_imgbank_1688381755.png" class="w-20 mx-auto" alt="Logo">
-            </div>
-            <nav class="flex-1 px-4 space-y-2">
-                <button onclick="openTab('tab-dashboard')" id="desk-btn-dashboard" class="w-full flex items-center gap-4 p-4 text-gray-400 hover:text-white transition font-bold text-sm nav-btn-active">
-                    <i class="fas fa-th-large w-6"></i> DASHBOARD
-                </button>
-                <button onclick="openTab('tab-perfil')" id="desk-btn-perfil" class="w-full flex items-center gap-4 p-4 text-gray-400 hover:text-white transition font-bold text-sm">
-                    <i class="fas fa-user w-6"></i> MEU PERFIL
-                </button>
-                <button onclick="openTab('tab-treinos')" id="desk-btn-treinos" class="w-full flex items-center gap-4 p-4 text-gray-400 hover:text-white transition font-bold text-sm">
-                    <i class="fas fa-running w-6"></i> TREINOS
-                </button>
-                <button onclick="openTab('tab-scout')" id="desk-btn-scout" class="w-full flex items-center gap-4 p-4 text-gray-400 hover:text-white transition font-bold text-sm">
-                    <i class="fas fa-video w-6"></i> SCOUT VEO 3
-                </button>
-            </nav>
-            <div class="p-4">
-                <button onclick="changeScreen('screen-landing')" class="w-full p-4 text-red-500 font-bold text-xs uppercase border border-red-500/20 rounded-xl hover:bg-red-500/5 transition">
-                    <i class="fas fa-sign-out-alt mr-2"></i> Sair
-                </button>
-            </div>
-        </aside>
-
-        <main class="flex-1 p-4 md:p-10 pb-24 overflow-y-auto">
-            
-            <div class="md:hidden flex justify-between items-center mb-8">
-                <img src="https://www.ogol.com.br/img/logos/equipas/61528_imgbank_1688381755.png" class="h-10">
-                <div class="flex items-center gap-3">
-                    <div class="text-right">
-                        <p class="text-[10px] font-bold text-blue-500 uppercase">Gabriel Silva</p>
-                        <p class="text-[8px] text-gray-500">U-17 Atacante</p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center text-black font-black text-xs">GS</div>
-                </div>
-            </div>
-
-            <div class="hidden md:flex justify-between items-center mb-10">
-                <h2 class="text-3xl font-black italic uppercase italic">Painel do <span class="text-blue-500">Atleta</span></h2>
-                <div class="glass px-6 py-2 rounded-full flex items-center gap-4">
-                    <span class="text-xs font-bold text-gray-400">STATUS: <span class="text-green-500">ATIVO</span></span>
-                    <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center text-black font-black text-xs">GS</div>
-                </div>
-            </div>
-
-            <div id="tab-dashboard" class="tab-content grid grid-cols-1 lg:grid-cols-3 gap-6">
-                
-                <div class="lg:col-span-2 glass p-6 md:p-8 rounded-[2rem] relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 bg-blue-600 text-white font-black italic text-[10px] uppercase">NK BSK ELITE</div>
-                    <div class="flex flex-col md:flex-row gap-8 items-center">
-                        <div class="w-32 h-32 md:w-48 md:h-48 rounded-2xl border-2 border-yellow-500/50 p-1 shadow-2xl transition group-hover:rotate-2">
-                            <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&q=80" class="w-full h-full object-cover rounded-xl">
-                        </div>
-                        <div class="text-center md:text-left">
-                            <h3 class="text-4xl font-black uppercase italic tracking-tighter">Gabriel Silva</h3>
-                            <p class="text-yellow-500 font-bold mb-4">Ponta Direita / Extremo</p>
-                            <div class="flex gap-4 justify-center md:justify-start">
-                                <div class="bg-white/5 px-4 py-2 rounded-lg"><p class="text-[10px] text-gray-500 uppercase font-bold">Idade</p><p class="font-black">17</p></div>
-                                <div class="bg-white/5 px-4 py-2 rounded-lg"><p class="text-[10px] text-gray-500 uppercase font-bold">Peso</p><p class="font-black">74.5kg</p></div>
-                                <div class="bg-white/5 px-4 py-2 rounded-lg"><p class="text-[10px] text-gray-500 uppercase font-bold">Classificação</p><p class="font-black text-yellow-500">A+</p></div>
-								<div class="bg-white/5 px-4 py-2 rounded-lg"><p class="text-[10px] text-gray-500 uppercase font-bold">Jogos</p><p class="font-black text-yellow-500">2</p></div>
-								<div class="bg-white/5 px-4 py-2 rounded-lg"><p class="text-[10px] text-gray-500 uppercase font-bold">Gols</p><p class="font-black text-yellow-500">7 Gols </p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass p-6 rounded-[2rem]">
-                    <h4 class="text-xs font-black uppercase italic mb-6 text-gray-400 tracking-widest">Score VEO AI</h4>
-                    <div class="space-y-4">
-                        <div><div class="flex justify-between text-[10px] font-bold mb-1 uppercase"><span>Velocidade</span> <span>92</span></div><div class="h-1 bg-slate-800 rounded-full"><div class="h-1 bg-blue-500 rounded-full" style="width: 92%"></div></div></div>
-                        <div><div class="flex justify-between text-[10px] font-bold mb-1 uppercase"><span>Finalização</span> <span>85</span></div><div class="h-1 bg-slate-800 rounded-full"><div class="h-1 bg-yellow-500 rounded-full" style="width: 85%"></div></div></div>
-                        <div><div class="flex justify-between text-[10px] font-bold mb-1 uppercase"><span>Visão de Jogo</span> <span>78</span></div><div class="h-1 bg-slate-800 rounded-full"><div class="h-1 bg-blue-500 rounded-full" style="width: 78%"></div></div></div>
-                    </div>
-                    <button onclick="openTab('tab-scout')" class="w-full mt-6 py-3 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition">Ver Vídeos da Análise</button>
-                </div>
-
-                <div class="glass p-6 rounded-[2rem] lg:col-span-3">
-                    <h4 class="text-xs font-black uppercase italic mb-4 text-blue-400">Progresso do Intercâmbio 🇭🇷</h4>
-                    <div class="flex items-center gap-4">
-                        <div class="flex-1 h-3 bg-slate-800 rounded-full overflow-hidden">
-                            <div class="h-full bg-gradient-to-r from-blue-600 to-yellow-500 w-[75%]"></div>
-                        </div>
-                        <span class="text-xs font-black">75%</span>
-                    </div>
-                    <div class="flex justify-between text-[10px] text-gray-500 mt-2 uppercase">
-                        <span>Seletiva (OK)</span>
-                        <span>Documentação (OK)</span>
-                        <span class="text-white font-bold">Emissão de Visto</span>
-                        <span>Viagem</span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tab-perfil" class="tab-content hidden-screen">
-                <div class="glass p-8 rounded-[2rem] mb-6">
-                    <h3 class="text-xl font-black uppercase italic mb-6">Meus Dados</h3>
-                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase font-bold text-gray-500">Nome Completo</label>
-                            <input type="text" value="Gabriel da Silva Junior" class="w-full bg-slate-900 border border-white/10 rounded-xl p-3 text-sm font-bold" readonly>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase font-bold text-gray-500">Data de Nascimento</label>
-                            <input type="text" value="12/05/2006" class="w-full bg-slate-900 border border-white/10 rounded-xl p-3 text-sm font-bold" readonly>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase font-bold text-gray-500">Passaporte</label>
-                            <input type="text" value="EM EMISSÃO" class="w-full bg-slate-900 border border-yellow-500/30 text-yellow-500 rounded-xl p-3 text-sm font-bold" readonly>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div id="tab-treinos" class="tab-content hidden-screen space-y-4">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl font-black uppercase italic">Agenda Semanal</h3>
-                    <span class="text-xs bg-white/10 px-3 py-1 rounded-full">Fev 2024</span>
-                </div>
-                <div class="glass p-5 rounded-2xl flex justify-between items-center border-l-4 border-yellow-500 bg-yellow-500/5">
-                    <div class="flex gap-4 items-center">
-                        <div class="w-12 h-12 rounded-xl bg-yellow-500 flex items-center justify-center text-black font-black text-xs flex-col">
-                            <span>HOJE</span>
-                        </div>
-                        <div>
-                            <p class="font-bold text-sm text-white">Treino de Posicionamento (VEO 3)</p>
-                            <p class="text-[10px] text-gray-400">08:30 - Campo 02</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tab-scout" class="tab-content hidden-screen">
-                <h3 class="text-xl font-black uppercase italic mb-6">Capturas VEO 3</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="glass p-3 rounded-2xl hover:bg-white/5 transition cursor-pointer group">
-                        <div class="relative aspect-video rounded-xl overflow-hidden mb-3">
-                            <div class="absolute top-2 left-2 z-10 bg-black/80 text-white text-[8px] font-bold px-2 py-1 rounded border border-white/20">CAM 1 - ANÁLISE IA</div>
-                            
-                            <video autoplay="true" loop="" playsinline="true" muted="" class="w-full h-full object-cover">
-                                <source src="https://cdn.prod.website-files.com/65a1660e61e47f70a246ac5c%2F6880c7be52c1c9b0c85d2a7e_Football%20Clip-transcode.mp4" type="video/mp4">
-                            </video>
-
-                        </div>
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <p class="font-bold text-sm">Coletivo: Análise Tática</p>
-                                <p class="text-[10px] text-gray-500">Detectado: Movimentação de Ataque</p>
-                            </div>
-                            <span class="text-[10px] bg-yellow-500 text-black px-2 py-1 rounded font-bold">AI SCORE: 8.5</span>
-                        </div>
-                    </div>
-
-                    <div class="glass p-3 rounded-2xl border-dashed border-2 border-white/5 flex flex-col items-center justify-center text-gray-600">
-                        <i class="fas fa-video-slash text-2xl mb-2"></i>
-                        <p class="text-[10px] font-bold uppercase">Aguardando Próxima Sessão</p>
-                    </div>
-                </div>
-            </div>
-
-        </main>
-
-        <nav class="md:hidden fixed bottom-0 w-full glass border-t border-white/10 flex justify-around py-4 z-[100] bg-[#020617]/90 backdrop-blur-xl">
-            <button onclick="openTab('tab-dashboard')" id="mob-btn-dashboard" class="text-yellow-500 nav-btn-mobile-active transition"><i class="fas fa-th-large text-xl"></i></button>
-            <button onclick="openTab('tab-perfil')" id="mob-btn-perfil" class="text-gray-500 transition"><i class="fas fa-user-circle text-xl"></i></button>
-            <button onclick="openTab('tab-treinos')" id="mob-btn-treinos" class="text-gray-500 transition"><i class="fas fa-running text-xl"></i></button>
-            <button onclick="openTab('tab-scout')" id="mob-btn-scout" class="text-gray-500 transition"><i class="fas fa-video text-xl"></i></button>
-            <button onclick="changeScreen('screen-landing')" class="text-red-500"><i class="fas fa-sign-out-alt text-xl"></i></button>
-        </nav>
-    </div>
-
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <script>
-        function changeScreen(screenId) {
-            document.getElementById('screen-landing').classList.add('hidden-screen');
-            document.getElementById('screen-app').classList.add('hidden-screen');
-            document.getElementById(screenId).classList.remove('hidden-screen');
-            window.scrollTo(0, 0);
-        }
-
-        function openTab(tabId) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.add('hidden-screen'));
-            document.getElementById(tabId).classList.remove('hidden-screen');
-
-            resetButtons('desk-btn');
-            resetButtonsMobile('mob-btn');
-
-            const suffix = tabId.replace('tab-', '');
-            
-            const activeDesk = document.getElementById(`desk-btn-${suffix}`);
-            if(activeDesk) {
-                activeDesk.classList.add('nav-btn-active');
-                activeDesk.classList.remove('text-gray-400');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'off-white': '#F8FAF9',
+                        'forest': '#064E3B',
+                        'slate-custom': '#334155',
+                        'teal-accent': '#2DD4BF',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+                        'glow': '0 0 20px rgba(45, 212, 191, 0.5)',
+                    }
+                }
             }
-
-            const activeMob = document.getElementById(`mob-btn-${suffix}`);
-            if(activeMob) {
-                activeMob.classList.add('nav-btn-mobile-active', 'text-yellow-500');
-                activeMob.classList.remove('text-gray-500');
-            }
-        }
-
-        function resetButtons(prefix) {
-            const buttons = document.querySelectorAll(`[id^="${prefix}"]`);
-            buttons.forEach(btn => {
-                btn.classList.remove('nav-btn-active');
-                btn.classList.add('text-gray-400');
-            });
-        }
-
-        function resetButtonsMobile(prefix) {
-            const buttons = document.querySelectorAll(`[id^="${prefix}"]`);
-            buttons.forEach(btn => {
-                btn.classList.remove('nav-btn-mobile-active', 'text-yellow-500');
-                btn.classList.add('text-gray-500');
-            });
         }
     </script>
+    
+    <style>
+        body {
+            background-color: #F8FAF9;
+            color: #334155;
+        }
+        
+        .glass-nav {
+            background: rgba(248, 250, 249, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #064E3B 0%, #2DD4BF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-abstract {
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.05) 0%, rgba(45, 212, 191, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-abstract::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(6, 78, 59, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(6, 78, 59, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(6, 78, 59, 0.15);
+        }
+        
+        .industry-item {
+            transition: all 0.3s ease;
+            filter: grayscale(30%);
+            opacity: 0.8;
+        }
+        
+        .industry-item:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: translateY(-4px);
+        }
+        
+        .glow-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .glow-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .glow-button:hover::before {
+            left: 100%;
+        }
+        
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(45, 212, 191, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .comparison-row {
+            transition: background-color 0.3s ease;
+        }
+        
+        .comparison-row:hover {
+            background-color: rgba(6, 78, 59, 0.02);
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .float-element {
+            animation: float 6s ease-in-out infinite;
+        }
 
+        /* =============================================
+           ÁRVORE ORGÂNICA - estilos aprimorados
+        ============================================= */
+        #treeContainer {
+            pointer-events: none;
+        }
+
+        /* Folha base */
+        .leaf-cluster {
+            transform-origin: center bottom;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        /* Animação de balanço suave das folhas depois de crescer */
+        @keyframes sway {
+            0%, 100% { transform: rotate(-2deg) scale(1); }
+            50%       { transform: rotate(2deg)  scale(1); }
+        }
+
+        .leaf-cluster.grown {
+            animation: sway 4s ease-in-out infinite;
+        }
+
+        /* Tronco animado */
+        #trunkPath {
+            stroke-dasharray: 1200;
+            stroke-dashoffset: 1200;
+            transition: stroke-dashoffset 0.05s linear;
+        }
+
+        /* Ramos animados */
+        .branch-path {
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            transition: stroke-dashoffset 0.4s ease-out, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        /* =============================================
+           ILUSTRAÇÃO TÉCNICA AMBIENTAL - animações
+        ============================================= */
+        @keyframes dash-flow {
+            to { stroke-dashoffset: -20; }
+        }
+        @keyframes blink-dot {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.2; }
+        }
+        @keyframes scan-line {
+            0%   { transform: translateY(0); opacity: 0.8; }
+            100% { transform: translateY(120px); opacity: 0; }
+        }
+        @keyframes pulse-ring {
+            0%   { r: 4; opacity: 0.8; }
+            100% { r: 14; opacity: 0; }
+        }
+        @keyframes rise-bar {
+            from { transform: scaleY(0); }
+            to   { transform: scaleY(1); }
+        }
+
+        .flow-line {
+            stroke-dasharray: 8 4;
+            animation: dash-flow 1.5s linear infinite;
+        }
+        .scan {
+            animation: scan-line 2s ease-in infinite;
+        }
+        .pulse-ring {
+            animation: pulse-ring 1.8s ease-out infinite;
+        }
+        .bar-anim {
+            transform-origin: bottom;
+            animation: rise-bar 1s cubic-bezier(0.34,1.56,0.64,1) both;
+        }
+        .bar-anim:nth-child(1) { animation-delay: 0.1s; }
+        .bar-anim:nth-child(2) { animation-delay: 0.25s; }
+        .bar-anim:nth-child(3) { animation-delay: 0.4s; }
+        .bar-anim:nth-child(4) { animation-delay: 0.55s; }
+        .bar-anim:nth-child(5) { animation-delay: 0.7s; }
+
+        .blink { animation: blink-dot 1.2s ease infinite; }
+        
+        /* Estilo para a logo */
+        .logo-image {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-2">
+                    <!-- Substituído o ícone pela imagem PNG -->
+                    <img src="Logo.png" alt="Menezes Eco Consult" class="logo-image">
+                    <div class="flex flex-col">
+                        <span class="font-serif text-xl font-semibold text-forest tracking-tight">Menezes</span>
+                        <span class="text-xs text-slate-custom tracking-widest uppercase">Eco Consult</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#servicos" class="text-sm font-medium text-slate-custom hover:text-forest transition-colors">Serviços</a>
+                    <a href="#metodo" class="text-sm font-medium text-slate-custom hover:text-forest transition-colors">O Método</a>
+                    <a href="#industrias" class="text-sm font-medium text-slate-custom hover:text-forest transition-colors">Indústrias</a>
+                    <a href="#contato" class="px-6 py-2.5 bg-forest text-white text-sm font-medium rounded-full hover:bg-opacity-90 transition-all shadow-inner-soft">
+                        Consultoria Express
+                    </a>
+                </div>
+                
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6 text-forest"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="hidden md:hidden bg-off-white border-t border-gray-100" id="mobile-menu">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#servicos" class="block text-slate-custom hover:text-forest">Serviços</a>
+                <a href="#metodo" class="block text-slate-custom hover:text-forest">O Método</a>
+                <a href="#industrias" class="block text-slate-custom hover:text-forest">Indústrias</a>
+                <a href="#contato" class="block text-forest font-medium">Consultoria Express</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8 z-10 reveal active">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/50 rounded-full border border-forest/10">
+                        <span class="w-2 h-2 bg-teal-accent rounded-full animate-pulse"></span>
+                        <span class="text-xs font-medium text-forest uppercase tracking-wider">Consultoria Premium</span>
+                    </div>
+                    
+                    <h1 class="font-serif text-5xl lg:text-7xl font-medium text-forest leading-[1.1] tracking-tight">
+                        Engenharia Ambiental que <span class="italic text-slate-custom">valoriza</span> seu patrimônio
+                    </h1>
+                    
+                    <p class="text-lg lg:text-xl text-slate-custom leading-relaxed max-w-lg font-light">
+                        Segurança jurídica absoluta e maximização de ativos através da excelência técnica em licenciamento e gestão ambiental.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#contato" class="inline-flex items-center justify-center px-8 py-4 bg-forest text-white rounded-2xl font-medium hover:shadow-lg hover:shadow-forest/20 transition-all duration-300 group">
+                            <span>Iniciar Diagnóstico</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#metodo" class="inline-flex items-center justify-center px-8 py-4 border border-forest/20 text-forest rounded-2xl font-medium hover:bg-forest/5 transition-all duration-300">
+                            Conhecer Metodologia
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center space-x-6 pt-8 text-sm text-slate-custom">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-teal-accent"></i>
+                            <span>100% Compliance</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="file-text" class="w-5 h-5 text-teal-accent"></i>
+                            <span>Documentação Técnica</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Visual — Ilustração técnica de engenharia ambiental -->
+                <div class="relative lg:h-[600px] flex items-center justify-center reveal active">
+                    <div class="absolute inset-0 hero-abstract rounded-3xl grid-pattern"></div>
+                    
+                    <div class="relative z-10 w-full h-full flex items-center justify-center">
+                        <div class="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-teal-accent/20 to-forest/10 rounded-full blur-3xl float-element"></div>
+                        <div class="absolute bottom-20 left-10 w-48 h-48 bg-gradient-to-tr from-forest/10 to-teal-accent/20 rounded-full blur-2xl float-element" style="animation-delay: 2s;"></div>
+                        
+                        <!-- Ilustração SVG Técnica Ambiental -->
+                        <div class="relative w-80 h-80 lg:w-[420px] lg:h-[420px]">
+                            <div class="absolute inset-0 border-2 border-forest/10 rounded-3xl transform rotate-3"></div>
+                            <div class="absolute inset-0 bg-white/60 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/60 overflow-hidden p-4">
+                                
+                                <svg viewBox="0 0 380 360" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                                    <defs>
+                                        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#e8f5e9"/>
+                                            <stop offset="100%" stop-color="#f1f8e9"/>
+                                        </linearGradient>
+                                        <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#b2dfdb"/>
+                                            <stop offset="100%" stop-color="#80cbc4"/>
+                                        </linearGradient>
+                                        <linearGradient id="soilGrad" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#8d6e63"/>
+                                            <stop offset="40%" stop-color="#6d4c41"/>
+                                            <stop offset="100%" stop-color="#4e342e"/>
+                                        </linearGradient>
+                                        <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#43a047"/>
+                                            <stop offset="100%" stop-color="#1b5e20"/>
+                                        </linearGradient>
+                                        <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#2DD4BF"/>
+                                            <stop offset="100%" stop-color="#0f766e"/>
+                                        </linearGradient>
+                                        <filter id="soft-shadow">
+                                            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#064E3B" flood-opacity="0.15"/>
+                                        </filter>
+                                        <clipPath id="card-clip">
+                                            <rect width="380" height="360" rx="16"/>
+                                        </clipPath>
+                                    </defs>
+
+                                    <g clip-path="url(#card-clip)">
+
+                                    <!-- Fundo céu/ambiente -->
+                                    <rect width="380" height="360" fill="url(#skyGrad)" rx="16"/>
+
+                                    <!-- ── TERRENO ── -->
+                                    <!-- Camadas de solo visíveis (corte transversal) -->
+                                    <rect x="0" y="220" width="380" height="140" fill="#6d4c41" opacity="0.15" rx="0"/>
+                                    <!-- Superfície verde -->
+                                    <ellipse cx="190" cy="220" rx="195" ry="12" fill="#388e3c" opacity="0.25"/>
+                                    <!-- Grama estilizada -->
+                                    <g fill="#2e7d32" opacity="0.6">
+                                        <path d="M20 220 Q22 210 24 220"/>
+                                        <path d="M30 219 Q33 207 36 219"/>
+                                        <path d="M50 220 Q52 212 54 220"/>
+                                        <path d="M65 218 Q68 208 71 218"/>
+                                        <path d="M280 219 Q283 209 286 219"/>
+                                        <path d="M300 220 Q302 211 304 220"/>
+                                        <path d="M320 219 Q323 207 326 219"/>
+                                        <path d="M340 220 Q342 212 344 220"/>
+                                        <path d="M360 218 Q362 210 364 218"/>
+                                    </g>
+
+                                    <!-- ── ÁRVORE CENTRAL ── -->
+                                    <!-- Tronco -->
+                                    <rect x="182" y="165" width="16" height="58" fill="#5d4037" rx="4"/>
+                                    <!-- Copa principal -->
+                                    <ellipse cx="190" cy="140" rx="42" ry="38" fill="url(#leafGrad)" filter="url(#soft-shadow)"/>
+                                    <!-- Copa secundária esquerda -->
+                                    <ellipse cx="162" cy="155" rx="28" ry="24" fill="#388e3c"/>
+                                    <!-- Copa secundária direita -->
+                                    <ellipse cx="218" cy="155" rx="28" ry="24" fill="#2e7d32"/>
+                                    <!-- Brilho copa -->
+                                    <ellipse cx="180" cy="128" rx="18" ry="12" fill="#66bb6a" opacity="0.35"/>
+
+                                    <!-- ── SENSOR / ESTAÇÃO DE MONITORAMENTO ── -->
+                                    <!-- Poste -->
+                                    <rect x="305" y="160" width="5" height="62" fill="#455a64" rx="2"/>
+                                    <!-- Caixa sensor -->
+                                    <rect x="295" y="148" width="26" height="18" rx="4" fill="#064E3B" filter="url(#soft-shadow)"/>
+                                    <rect x="297" y="150" width="22" height="14" rx="3" fill="#0f766e"/>
+                                    <!-- Display mini -->
+                                    <rect x="299" y="152" width="10" height="8" rx="1" fill="#2DD4BF" opacity="0.8"/>
+                                    <!-- LED piscando -->
+                                    <circle cx="316" cy="156" r="2.5" fill="#00e676" class="blink"/>
+                                    <!-- Antena -->
+                                    <line x1="308" y1="148" x2="308" y2="138" stroke="#455a64" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="308" cy="136" r="2" fill="#2DD4BF"/>
+                                    <!-- Ondas de sinal -->
+                                    <circle cx="308" cy="136" r="6" fill="none" stroke="#2DD4BF" stroke-width="1" opacity="0.5" class="pulse-ring"/>
+                                    <circle cx="308" cy="136" r="6" fill="none" stroke="#2DD4BF" stroke-width="1" opacity="0.5" class="pulse-ring" style="animation-delay:0.6s"/>
+
+                                    <!-- ── CORPO HÍDRICO / RIO ── -->
+                                    <path d="M0 258 Q40 250 80 258 Q120 266 160 258 Q200 250 240 256 Q280 262 320 255 Q350 250 380 256" 
+                                          fill="none" stroke="#4dd0e1" stroke-width="10" stroke-linecap="round" opacity="0.5"/>
+                                    <path d="M0 265 Q50 257 100 265 Q150 273 200 264 Q250 256 300 264 Q340 271 380 263" 
+                                          fill="none" stroke="#80deea" stroke-width="6" stroke-linecap="round" opacity="0.4"/>
+                                    <!-- Seta de fluxo hídrico -->
+                                    <path d="M40 260 L70 260" stroke="#00838f" stroke-width="2" stroke-dasharray="4 3" class="flow-line" marker-end="url(#arr)"/>
+                                    <defs>
+                                        <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                                            <path d="M0,0 L6,3 L0,6 Z" fill="#00838f"/>
+                                        </marker>
+                                    </defs>
+                                    <!-- Label rio -->
+                                    <text x="190" y="282" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="7" fill="#00838f" font-weight="600" letter-spacing="1">CORPO HÍDRICO MONITORADO</text>
+
+                                    <!-- ── SONDA DE SOLO (à esquerda) ── -->
+                                    <!-- Haste -->
+                                    <rect x="62" y="200" width="4" height="38" fill="#78909c" rx="1"/>
+                                    <!-- Cabeça sensor -->
+                                    <rect x="56" y="193" width="16" height="12" rx="3" fill="#064E3B" filter="url(#soft-shadow)"/>
+                                    <rect x="58" y="195" width="12" height="8" rx="2" fill="#1de9b6" opacity="0.7"/>
+                                    <!-- Fio de dados -->
+                                    <path d="M72 199 Q90 195 105 198" stroke="#37474f" stroke-width="1.5" stroke-dasharray="3 2" fill="none"/>
+                                    <!-- Label -->
+                                    <text x="64" y="188" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6.5" fill="#064E3B" font-weight="700">SOLO</text>
+
+                                    <!-- ── PAINEL SOLAR (canto superior esquerdo) ── -->
+                                    <rect x="22" y="88" width="50" height="32" rx="4" fill="#1565c0" opacity="0.85" filter="url(#soft-shadow)"/>
+                                    <!-- Grade do painel -->
+                                    <line x1="32" y1="88" x2="32" y2="120" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
+                                    <line x1="42" y1="88" x2="42" y2="120" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
+                                    <line x1="52" y1="88" x2="52" y2="120" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
+                                    <line x1="62" y1="88" x2="62" y2="120" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
+                                    <line x1="22" y1="100" x2="72" y2="100" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
+                                    <line x1="22" y1="110" x2="72" y2="110" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
+                                    <rect x="22" y="88" width="50" height="32" rx="4" fill="none" stroke="#90caf9" stroke-width="1.5" opacity="0.8"/>
+                                    <!-- Raio solar -->
+                                    <line x1="47" y1="78" x2="47" y2="83" stroke="#fdd835" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="35" y1="82" x2="38" y2="85" stroke="#fdd835" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="59" y1="82" x2="56" y2="85" stroke="#fdd835" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="47" cy="75" r="5" fill="#fdd835" opacity="0.9"/>
+
+                                    <!-- ── GRÁFICO DE BARRAS (canto inferior direito) ── -->
+                                    <rect x="240" y="292" width="128" height="58" rx="8" fill="white" opacity="0.92" filter="url(#soft-shadow)"/>
+                                    <text x="304" y="305" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6" fill="#064E3B" font-weight="700" letter-spacing="0.5">QUALIDADE DO AR — IQA</text>
+                                    <!-- Eixo -->
+                                    <line x1="252" y1="340" x2="360" y2="340" stroke="#cfd8dc" stroke-width="1"/>
+                                    <!-- Barras animadas -->
+                                    <g>
+                                        <rect class="bar-anim" x="257" y="316" width="14" height="24" fill="url(#barGrad)" rx="3" opacity="0.85"/>
+                                        <rect class="bar-anim" x="276" y="308" width="14" height="32" fill="url(#barGrad)" rx="3" opacity="0.9"/>
+                                        <rect class="bar-anim" x="295" y="320" width="14" height="20" fill="url(#barGrad)" rx="3" opacity="0.8"/>
+                                        <rect class="bar-anim" x="314" y="312" width="14" height="28" fill="url(#barGrad)" rx="3" opacity="0.9"/>
+                                        <rect class="bar-anim" x="333" y="305" width="14" height="35" fill="#43a047" rx="3" opacity="0.85"/>
+                                    </g>
+                                    <!-- Linha de referência -->
+                                    <line x1="252" y1="322" x2="360" y2="322" stroke="#ff7043" stroke-width="1" stroke-dasharray="4 2" opacity="0.6"/>
+                                    <text x="362" y="325" font-family="Plus Jakarta Sans,sans-serif" font-size="5.5" fill="#ff7043">ref.</text>
+
+                                    <!-- ── PONTO DE COLETA / BIODIVERSIDADE ── -->
+                                    <circle cx="140" cy="295" r="5" fill="#2DD4BF" filter="url(#soft-shadow)"/>
+                                    <circle cx="140" cy="295" r="9" fill="none" stroke="#2DD4BF" stroke-width="1.5" opacity="0.5"/>
+                                    <text x="140" y="315" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6" fill="#064E3B" font-weight="700">PONTO P-01</text>
+
+                                    <circle cx="88" cy="300" r="4" fill="#81c784" filter="url(#soft-shadow)"/>
+                                    <text x="88" y="318" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6" fill="#064E3B">P-02</text>
+
+                                    <circle cx="200" cy="290" r="4" fill="#ffd54f" filter="url(#soft-shadow)"/>
+                                    <text x="200" y="308" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6" fill="#064E3B">P-03</text>
+
+                                    <!-- Linha conectando pontos de coleta -->
+                                    <path d="M88 300 L140 295 L200 290" fill="none" stroke="#064E3B" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>
+
+                                    <!-- ── LABEL SUPERIOR ── -->
+                                    <rect x="100" y="14" width="180" height="22" rx="11" fill="#064E3B" opacity="0.9"/>
+                                    <text x="190" y="29" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="8" fill="#2DD4BF" font-weight="700" letter-spacing="1">MONITORAMENTO AMBIENTAL</text>
+
+                                    <!-- Linha de scan (efeito de análise técnica) -->
+                                    <rect x="0" y="40" width="380" height="2" fill="url(#barGrad)" opacity="0.12" class="scan"/>
+
+                                    </g><!-- fim clip -->
+                                </svg>
+
+                                <!-- Floating Stats sobrepostos -->
+                                <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur rounded-2xl p-3 shadow-lg border border-white/60">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-xs text-slate-custom uppercase tracking-wider">Projetos Ativos</p>
+                                            <p class="text-2xl font-serif font-semibold text-forest">+500</p>
+                                        </div>
+                                        <div class="h-10 w-px bg-forest/10"></div>
+                                        <div>
+                                            <p class="text-xs text-slate-custom uppercase tracking-wider">Taxa de Aprovação</p>
+                                            <p class="text-2xl font-serif font-semibold text-forest">99.8%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="absolute -top-4 -right-4 w-20 h-20 border border-teal-accent/30 rounded-full flex items-center justify-center">
+                                <i data-lucide="trending-up" class="w-8 h-8 text-teal-accent"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid Services -->
+    <section id="servicos" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-teal-accent font-medium text-sm uppercase tracking-widest">Nossos Serviços</span>
+                <h2 class="font-serif text-4xl lg:text-5xl text-forest mt-4 mb-6">Soluções integradas para complexidade ambiental</h2>
+                <p class="text-slate-custom text-lg font-light">Cada projeto recebe atenção categórica e soluções customizadas que superam as expectativas regulatórias.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
+                <div class="lg:col-span-2 lg:row-span-2 bento-card bg-white rounded-3xl p-8 shadow-inner-soft border border-forest/5 relative overflow-hidden group reveal">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-teal-accent/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                    <div class="relative z-10 h-full flex flex-col">
+                        <div class="w-14 h-14 bg-forest/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-forest group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="file-check" class="w-7 h-7 text-forest group-hover:text-white"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-forest mb-3">Licenciamento Ambiental</h3>
+                        <p class="text-slate-custom text-sm leading-relaxed mb-6 flex-grow">
+                            Tramitação estratégica junto aos órgãos ambientais federais, estaduais e municipais. Antecipação de demandas e gestão de riscos regulatórios desde a concepção do empreendimento.
+                        </p>
+                        <div class="flex items-center text-forest font-medium text-sm group-hover:translate-x-2 transition-transform cursor-pointer">
+                            <span>Explorar Processo</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bento-card bg-white rounded-3xl p-6 shadow-inner-soft border border-forest/5 relative overflow-hidden group reveal">
+                    <div class="w-12 h-12 bg-forest/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-forest group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="recycle" class="w-6 h-6 text-forest group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-forest mb-2">Gestão de Resíduos</h3>
+                    <p class="text-slate-custom text-sm leading-relaxed">Logística reversa, planos de gerenciamento e destinação ambientalmente adequada.</p>
+                </div>
+                
+                <div class="bento-card bg-white rounded-3xl p-6 shadow-inner-soft border border-forest/5 relative overflow-hidden group reveal">
+                    <div class="w-12 h-12 bg-forest/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-forest group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="award" class="w-6 h-6 text-forest group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-forest mb-2">Auditoria ISO</h3>
+                    <p class="text-slate-custom text-sm leading-relaxed">Certificações 14001 e implementação de sistemas de gestão ambiental corporativa.</p>
+                </div>
+                
+                <div class="lg:col-span-2 bento-card bg-gradient-to-br from-forest to-forest/90 rounded-3xl p-8 shadow-inner-soft relative overflow-hidden group reveal text-white">
+                    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBMMDQwIDBIMHoiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNhKSIvPjwvc3ZnPg==')] opacity-30"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div class="md:w-2/3">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <i data-lucide="binoculars" class="w-5 h-5 text-teal-accent"></i>
+                                <span class="text-teal-accent text-sm font-medium uppercase tracking-wider">Biodiversidade</span>
+                            </div>
+                            <h3 class="font-serif text-2xl mb-2">Estudos de Fauna e Flora</h3>
+                            <p class="text-white/80 text-sm leading-relaxed">
+                                Inventários biológicos, monitoramento de impactos e programas de compensação ambiental com metodologia científica rigorosa.
+                            </p>
+                        </div>
+                        <div class="md:w-1/3 flex justify-end">
+                            <div class="w-20 h-20 rounded-full border-2 border-white/20 flex items-center justify-center group-hover:border-teal-accent transition-colors cursor-pointer">
+                                <i data-lucide="play" class="w-8 h-8 text-white fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indústrias -->
+    <section id="industrias" class="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-off-white to-white"></div>
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-teal-accent font-medium text-sm uppercase tracking-widest">Experiência Setorial</span>
+                <h2 class="font-serif text-4xl lg:text-5xl text-forest mt-4 mb-6">Indústrias que atendemos</h2>
+                <p class="text-slate-custom text-lg font-light">Soluções especializadas para os mais diversos segmentos da economia.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+                <div class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
+                    <div class="w-20 h-20 bg-teal-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="store" class="w-10 h-10 text-forest"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-forest mb-2">Comércio</h3>
+                    <p class="text-sm text-slate-custom">Shoppings, centros comerciais e redes varejistas</p>
+                </div>
+                <div class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
+                    <div class="w-20 h-20 bg-teal-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="utensils" class="w-10 h-10 text-forest"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-forest mb-2">Indústria Alimentícia</h3>
+                    <p class="text-sm text-slate-custom">Frigoríficos, laticínios e processamento de alimentos</p>
+                </div>
+                <div class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
+                    <div class="w-20 h-20 bg-teal-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="car" class="w-10 h-10 text-forest"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-forest mb-2">Automotiva</h3>
+                    <p class="text-sm text-slate-custom">Montadoras, autopeças e concessionárias</p>
+                </div>
+                <div class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
+                    <div class="w-20 h-20 bg-teal-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="building" class="w-10 h-10 text-forest"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-forest mb-2">Infraestrutura</h3>
+                    <p class="text-sm text-slate-custom">Rodovias, ferrovias, portos e aeroportos</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 text-center reveal">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-forest/5 flex items-center justify-center">
+                        <i data-lucide="users" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-2xl font-serif font-semibold text-forest">+150</p>
+                        <p class="text-sm text-slate-custom">Empresas Atendidas</p>
+                    </div>
+                </div>
+                <div class="hidden md:block w-px h-12 bg-forest/10"></div>
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-forest/5 flex items-center justify-center">
+                        <i data-lucide="calendar" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-2xl font-serif font-semibold text-forest">12+</p>
+                        <p class="text-sm text-slate-custom">Anos de Experiência</p>
+                    </div>
+                </div>
+                <div class="hidden md:block w-px h-12 bg-forest/10"></div>
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-forest/5 flex items-center justify-center">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-2xl font-serif font-semibold text-forest">18</p>
+                        <p class="text-sm text-slate-custom">Estados Atendidos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section id="metodo" class="py-20 lg:py-32 bg-off-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-teal-accent font-medium text-sm uppercase tracking-widest">Por que a Menezes?</span>
+                <h2 class="font-serif text-4xl lg:text-5xl text-forest mt-4 mb-6">O Método Menezes vs. Consultorias Convencionais</h2>
+                <p class="text-slate-custom text-lg font-light">Uma abordagem que combina rigor técnico, segurança processual e visão estratégica de negócios.</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl shadow-inner-soft border border-forest/5 overflow-hidden reveal">
+                <div class="grid grid-cols-3 gap-4 p-6 lg:p-8 border-b border-forest/10 bg-white/50">
+                    <div class="col-span-1">
+                        <span class="text-sm font-medium text-slate-custom uppercase tracking-wider">Critério</span>
+                    </div>
+                    <div class="col-span-1 text-center">
+                        <span class="text-sm font-bold text-slate-custom/40 uppercase tracking-wider">Consultorias Comuns</span>
+                    </div>
+                    <div class="col-span-1 text-center bg-forest/5 rounded-xl -my-2 py-2">
+                        <span class="text-sm font-bold text-forest uppercase tracking-wider">Método Menezes</span>
+                    </div>
+                </div>
+                
+                <div class="divide-y divide-forest/5">
+                    <div class="comparison-row grid grid-cols-3 gap-4 p-6 lg:p-8 items-center">
+                        <div class="col-span-1"><span class="font-medium text-forest">Segurança no Licenciamento</span></div>
+                        <div class="col-span-1 text-center"><span class="text-slate-custom">Sujeito a autuações e condicionantes imprevistas</span></div>
+                        <div class="col-span-1 text-center"><span class="font-semibold text-forest flex items-center justify-center gap-2">Processo 100% Seguro<i data-lucide="shield" class="w-4 h-4 text-teal-accent"></i></span></div>
+                    </div>
+                    <div class="comparison-row grid grid-cols-3 gap-4 p-6 lg:p-8 items-center bg-white/30">
+                        <div class="col-span-1"><span class="font-medium text-forest">Interação com Órgãos</span></div>
+                        <div class="col-span-1 text-center"><span class="text-slate-custom">Reativa (resposta a demandas)</span></div>
+                        <div class="col-span-1 text-center"><span class="font-semibold text-forest flex items-center justify-center gap-2">Proativa &amp; Estratégica<i data-lucide="check-circle" class="w-4 h-4 text-teal-accent"></i></span></div>
+                    </div>
+                    <div class="comparison-row grid grid-cols-3 gap-4 p-6 lg:p-8 items-center">
+                        <div class="col-span-1"><span class="font-medium text-forest">Documentação Técnica</span></div>
+                        <div class="col-span-1 text-center"><span class="text-slate-custom">Padrão regulatório básico</span></div>
+                        <div class="col-span-1 text-center"><span class="font-semibold text-forest flex items-center justify-center gap-2">Excelência em Documentação<i data-lucide="file-check" class="w-4 h-4 text-teal-accent"></i></span></div>
+                    </div>
+                    <div class="comparison-row grid grid-cols-3 gap-4 p-6 lg:p-8 items-center bg-white/30">
+                        <div class="col-span-1"><span class="font-medium text-forest">Análise de Riscos</span></div>
+                        <div class="col-span-1 text-center"><span class="text-slate-custom">Superficial ou terceirizada</span></div>
+                        <div class="col-span-1 text-center"><span class="font-semibold text-forest flex items-center justify-center gap-2">Completa &amp; Detalhada<i data-lucide="search" class="w-4 h-4 text-teal-accent"></i></span></div>
+                    </div>
+                    <div class="comparison-row grid grid-cols-3 gap-4 p-6 lg:p-8 items-center">
+                        <div class="col-span-1"><span class="font-medium text-forest">Valorização do Ativo</span></div>
+                        <div class="col-span-1 text-center"><span class="text-slate-custom">Foco apenas em compliance</span></div>
+                        <div class="col-span-1 text-center"><span class="font-semibold text-forest flex items-center justify-center gap-2">Estratégia de Valor<i data-lucide="trending-up" class="w-4 h-4 text-teal-accent"></i></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contato" class="bg-forest relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(45,212,191,0.1)_0%,_transparent_50%)]"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 py-24 lg:py-32 relative z-10">
+            <div class="text-center mb-12 reveal">
+                <span class="text-teal-accent font-medium text-sm uppercase tracking-widest">Diagnóstico Express</span>
+                <h2 class="font-serif text-4xl lg:text-5xl text-white mt-4 mb-6">Pronto para desbloquear o potencial do seu empreendimento?</h2>
+                <p class="text-white/70 text-lg font-light max-w-2xl mx-auto">Inicie uma conversa pelo WhatsApp e receba uma análise prévia gratuita em até 48 horas.</p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto text-center reveal">
+                <button onclick="openWhatsAppChat()" class="w-full md:w-auto glow-button bg-teal-accent text-forest font-semibold px-12 py-5 rounded-2xl hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 text-lg mx-auto">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    <span>Iniciar Diagnóstico pelo WhatsApp</span>
+                </button>
+                <p class="text-white/40 text-xs text-center mt-4">Atendimento personalizado com resposta em até 2 horas durante horário comercial.</p>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-sm reveal">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="shield" class="w-4 h-4 text-teal-accent"></i>
+                    <span>Dados criptografados SSL</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Política de Privacidade</a>
+                    <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         ÁRVORE ORGÂNICA — SVG rico com copa densa
+    ============================================= -->
+    <div class="fixed right-0 lg:right-4 top-0 h-screen w-40 lg:w-72 z-30 pointer-events-none hidden md:block" id="treeContainer">
+        <svg id="treeSVG" viewBox="0 0 400 900" class="w-full h-full" preserveAspectRatio="xMidYMax meet">
+            <defs>
+                <!-- Tronco -->
+                <linearGradient id="trunkG" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#022c22"/>
+                    <stop offset="50%" stop-color="#064E3B"/>
+                    <stop offset="100%" stop-color="#065f46"/>
+                </linearGradient>
+
+                <!-- Folhagem — múltiplos verdes para profundidade -->
+                <radialGradient id="fg1" cx="40%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#4ade80"/>
+                    <stop offset="50%" stop-color="#16a34a"/>
+                    <stop offset="100%" stop-color="#14532d"/>
+                </radialGradient>
+                <radialGradient id="fg2" cx="55%" cy="35%" r="55%">
+                    <stop offset="0%" stop-color="#86efac"/>
+                    <stop offset="50%" stop-color="#22c55e"/>
+                    <stop offset="100%" stop-color="#15803d"/>
+                </radialGradient>
+                <radialGradient id="fg3" cx="45%" cy="45%" r="50%">
+                    <stop offset="0%" stop-color="#2DD4BF"/>
+                    <stop offset="60%" stop-color="#0d9488"/>
+                    <stop offset="100%" stop-color="#064E3B"/>
+                </radialGradient>
+                <radialGradient id="fg4" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#34d399"/>
+                    <stop offset="55%" stop-color="#059669"/>
+                    <stop offset="100%" stop-color="#064E3B"/>
+                </radialGradient>
+
+                <filter id="leafBlur">
+                    <feGaussianBlur stdDeviation="1.5"/>
+                </filter>
+                <filter id="leafShadow">
+                    <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#022c22" flood-opacity="0.25"/>
+                </filter>
+            </defs>
+
+            <!-- Solo / raízes -->
+            <g id="roots" opacity="0">
+                <path d="M195 870 Q175 855 155 865 Q140 872 135 880" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M200 875 Q200 862 200 880" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path d="M205 870 Q225 855 245 865 Q260 872 265 882" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M175 875 Q160 870 145 880" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M225 875 Q240 870 255 882" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
+            </g>
+
+            <!-- Tronco principal (forma sólida, orgânica) -->
+            <path id="trunkSolid"
+                  d="M188 870
+                     C186 820 184 780 183 740
+                     C182 700 184 670 186 640
+                     C188 610 190 580 191 550
+                     C192 510 191 480 190 450
+                     C189 410 190 380 192 350
+                     C194 310 196 280 196 250
+                     C196 220 195 190 196 160"
+                  stroke="url(#trunkG)" stroke-width="22" fill="none" stroke-linecap="round"
+                  style="stroke-dasharray:1200; stroke-dashoffset:1200; transition: stroke-dashoffset 0.05s linear;"/>
+
+            <!-- Tronco highlight (brilho lateral) -->
+            <path id="trunkHighlight"
+                  d="M192 870 C190 820 189 760 190 700 C191 640 193 580 194 520 C195 460 195 400 196 340 C197 290 197 240 198 190"
+                  stroke="#0f766e" stroke-width="6" fill="none" stroke-linecap="round" opacity="0"
+                  style="stroke-dasharray:900; stroke-dashoffset:900; transition: stroke-dashoffset 0.05s linear;"/>
+
+            <!-- ── RAMOS (12 ramos em ambos os lados) ── -->
+            <g id="branches" opacity="0" style="transition: opacity 0.5s ease;">
+
+                <!-- Lado esquerdo -->
+                <path class="br" d="M186 720 Q150 690 110 670 Q80 655 55 645" stroke="#064E3B" stroke-width="10" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M110 670 Q85 650 65 635" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M110 670 Q100 640 88 615" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M185 650 Q145 615 105 590 Q75 572 45 558" stroke="#064E3B" stroke-width="9" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M105 590 Q78 572 55 556" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M187 570 Q148 535 108 510 Q78 492 48 475" stroke="#064E3B" stroke-width="8" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M108 510 Q82 494 60 478" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M108 510 Q96 482 82 456" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M188 490 Q150 455 112 428 Q82 406 52 388" stroke="#064E3B" stroke-width="7" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M112 428 Q86 410 64 392" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M189 400 Q155 366 120 340 Q92 318 68 302" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M120 340 Q96 320 76 302" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M191 310 Q160 278 130 255 Q106 236 86 222" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M130 255 Q108 235 90 220" stroke="#064E3B" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M192 230 Q168 204 145 183 Q125 166 110 152" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                <!-- Lado direito -->
+                <path class="br" d="M214 720 Q252 690 294 670 Q325 654 352 644" stroke="#064E3B" stroke-width="10" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M294 670 Q320 652 342 636" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M294 670 Q308 642 320 616" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M215 650 Q255 615 296 590 Q328 572 358 557" stroke="#064E3B" stroke-width="9" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M296 590 Q324 573 350 558" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M213 570 Q255 534 296 509 Q328 490 358 474" stroke="#064E3B" stroke-width="8" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M296 509 Q322 492 346 478" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M296 509 Q310 480 325 454" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M212 490 Q252 455 292 428 Q324 406 356 387" stroke="#064E3B" stroke-width="7" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M292 428 Q318 410 342 393" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M211 400 Q248 366 286 340 Q316 318 344 303" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M286 340 Q312 320 336 304" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M210 310 Q244 276 278 252 Q306 232 328 218" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M278 252 Q302 232 322 218" stroke="#064E3B" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+                <path class="br" d="M208 230 Q236 203 262 182 Q284 164 302 152" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                <!-- Centro (vertical) -->
+                <path class="br" d="M196 280 Q194 240 192 200 Q190 170 188 145" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path class="br" d="M200 280 Q202 240 204 200 Q206 168 208 145" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
+            </g>
+
+            <!-- ── COPA — elipses sobrepostas (estilo Impressionista) ── -->
+            <!-- Cada grupo de folhagem cresce ao fazer scroll -->
+            <!-- Parte baixa da copa -->
+            <g id="leaves-low" style="opacity:0; transition: opacity 0.5s ease;">
+                <!-- Esquerda baixa -->
+                <ellipse class="lf" cx="72"  cy="650" rx="52" ry="40" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:72px 650px;"/>
+                <ellipse class="lf" cx="52"  cy="630" rx="38" ry="30" fill="url(#fg2)" style="transform:scale(0); transform-origin:52px 630px;"/>
+                <ellipse class="lf" cx="95"  cy="618" rx="44" ry="34" fill="url(#fg4)" style="transform:scale(0); transform-origin:95px 618px;"/>
+                <ellipse class="lf" cx="62"  cy="608" rx="30" ry="24" fill="url(#fg3)" style="transform:scale(0); transform-origin:62px 608px;"/>
+
+                <!-- Direita baixa -->
+                <ellipse class="lf" cx="332" cy="648" rx="52" ry="40" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:332px 648px;"/>
+                <ellipse class="lf" cx="352" cy="628" rx="38" ry="30" fill="url(#fg2)" style="transform:scale(0); transform-origin:352px 628px;"/>
+                <ellipse class="lf" cx="308" cy="618" rx="44" ry="34" fill="url(#fg4)" style="transform:scale(0); transform-origin:308px 618px;"/>
+                <ellipse class="lf" cx="345" cy="605" rx="30" ry="24" fill="url(#fg3)" style="transform:scale(0); transform-origin:345px 605px;"/>
+            </g>
+
+            <!-- Parte média da copa -->
+            <g id="leaves-mid" style="opacity:0; transition: opacity 0.5s ease;">
+                <!-- Esquerda média -->
+                <ellipse class="lf" cx="58"  cy="550" rx="58" ry="44" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:58px 550px;"/>
+                <ellipse class="lf" cx="38"  cy="530" rx="42" ry="32" fill="url(#fg2)" style="transform:scale(0); transform-origin:38px 530px;"/>
+                <ellipse class="lf" cx="88"  cy="515" rx="50" ry="38" fill="url(#fg4)" style="transform:scale(0); transform-origin:88px 515px;"/>
+                <ellipse class="lf" cx="48"  cy="502" rx="36" ry="28" fill="url(#fg3)" style="transform:scale(0); transform-origin:48px 502px;"/>
+                <ellipse class="lf" cx="105" cy="490" rx="38" ry="30" fill="url(#fg1)" style="transform:scale(0); transform-origin:105px 490px;"/>
+
+                <!-- Direita média -->
+                <ellipse class="lf" cx="345" cy="548" rx="58" ry="44" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:345px 548px;"/>
+                <ellipse class="lf" cx="365" cy="528" rx="42" ry="32" fill="url(#fg2)" style="transform:scale(0); transform-origin:365px 528px;"/>
+                <ellipse class="lf" cx="315" cy="515" rx="50" ry="38" fill="url(#fg4)" style="transform:scale(0); transform-origin:315px 515px;"/>
+                <ellipse class="lf" cx="355" cy="500" rx="36" ry="28" fill="url(#fg3)" style="transform:scale(0); transform-origin:355px 500px;"/>
+                <ellipse class="lf" cx="298" cy="488" rx="38" ry="30" fill="url(#fg1)" style="transform:scale(0); transform-origin:298px 488px;"/>
+
+                <!-- Centro médio -->
+                <ellipse class="lf" cx="200" cy="530" rx="55" ry="42" fill="url(#fg2)" style="transform:scale(0); transform-origin:200px 530px;"/>
+                <ellipse class="lf" cx="175" cy="515" rx="40" ry="30" fill="url(#fg4)" style="transform:scale(0); transform-origin:175px 515px;"/>
+                <ellipse class="lf" cx="225" cy="515" rx="40" ry="30" fill="url(#fg3)" style="transform:scale(0); transform-origin:225px 515px;"/>
+            </g>
+
+            <!-- Parte alta da copa -->
+            <g id="leaves-high" style="opacity:0; transition: opacity 0.5s ease;">
+                <!-- Esquerda alta -->
+                <ellipse class="lf" cx="72"  cy="440" rx="62" ry="48" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:72px 440px;"/>
+                <ellipse class="lf" cx="45"  cy="418" rx="46" ry="36" fill="url(#fg2)" style="transform:scale(0); transform-origin:45px 418px;"/>
+                <ellipse class="lf" cx="100" cy="405" rx="54" ry="42" fill="url(#fg4)" style="transform:scale(0); transform-origin:100px 405px;"/>
+                <ellipse class="lf" cx="58"  cy="392" rx="40" ry="32" fill="url(#fg3)" style="transform:scale(0); transform-origin:58px 392px;"/>
+                <ellipse class="lf" cx="115" cy="378" rx="44" ry="34" fill="url(#fg1)" style="transform:scale(0); transform-origin:115px 378px;"/>
+                <ellipse class="lf" cx="78"  cy="368" rx="36" ry="28" fill="url(#fg2)" style="transform:scale(0); transform-origin:78px 368px;"/>
+
+                <!-- Direita alta -->
+                <ellipse class="lf" cx="330" cy="440" rx="62" ry="48" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:330px 440px;"/>
+                <ellipse class="lf" cx="358" cy="418" rx="46" ry="36" fill="url(#fg2)" style="transform:scale(0); transform-origin:358px 418px;"/>
+                <ellipse class="lf" cx="302" cy="405" rx="54" ry="42" fill="url(#fg4)" style="transform:scale(0); transform-origin:302px 405px;"/>
+                <ellipse class="lf" cx="345" cy="390" rx="40" ry="32" fill="url(#fg3)" style="transform:scale(0); transform-origin:345px 390px;"/>
+                <ellipse class="lf" cx="288" cy="378" rx="44" ry="34" fill="url(#fg1)" style="transform:scale(0); transform-origin:288px 378px;"/>
+                <ellipse class="lf" cx="325" cy="366" rx="36" ry="28" fill="url(#fg2)" style="transform:scale(0); transform-origin:325px 366px;"/>
+
+                <!-- Centro alto -->
+                <ellipse class="lf" cx="200" cy="420" rx="70" ry="54" fill="url(#fg2)" style="transform:scale(0); transform-origin:200px 420px;"/>
+                <ellipse class="lf" cx="162" cy="398" rx="52" ry="40" fill="url(#fg4)" style="transform:scale(0); transform-origin:162px 398px;"/>
+                <ellipse class="lf" cx="240" cy="398" rx="52" ry="40" fill="url(#fg3)" style="transform:scale(0); transform-origin:240px 398px;"/>
+                <ellipse class="lf" cx="200" cy="378" rx="60" ry="46" fill="url(#fg1)" style="transform:scale(0); transform-origin:200px 378px;"/>
+                <ellipse class="lf" cx="170" cy="360" rx="42" ry="34" fill="url(#fg2)" style="transform:scale(0); transform-origin:170px 360px;"/>
+                <ellipse class="lf" cx="232" cy="360" rx="42" ry="34" fill="url(#fg4)" style="transform:scale(0); transform-origin:232px 360px;"/>
+            </g>
+
+            <!-- Copa superior / topo (mais densa) -->
+            <g id="leaves-top" style="opacity:0; transition: opacity 0.5s ease;">
+                <!-- Espalhamento por todo o topo -->
+                <ellipse class="lf" cx="98"  cy="308" rx="58" ry="46" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:98px 308px;"/>
+                <ellipse class="lf" cx="68"  cy="285" rx="44" ry="36" fill="url(#fg2)" style="transform:scale(0); transform-origin:68px 285px;"/>
+                <ellipse class="lf" cx="130" cy="272" rx="52" ry="40" fill="url(#fg4)" style="transform:scale(0); transform-origin:130px 272px;"/>
+                <ellipse class="lf" cx="80"  cy="258" rx="40" ry="30" fill="url(#fg3)" style="transform:scale(0); transform-origin:80px 258px;"/>
+
+                <ellipse class="lf" cx="305" cy="308" rx="58" ry="46" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:305px 308px;"/>
+                <ellipse class="lf" cx="335" cy="285" rx="44" ry="36" fill="url(#fg2)" style="transform:scale(0); transform-origin:335px 285px;"/>
+                <ellipse class="lf" cx="272" cy="272" rx="52" ry="40" fill="url(#fg4)" style="transform:scale(0); transform-origin:272px 272px;"/>
+                <ellipse class="lf" cx="322" cy="258" rx="40" ry="30" fill="url(#fg3)" style="transform:scale(0); transform-origin:322px 258px;"/>
+
+                <ellipse class="lf" cx="200" cy="310" rx="78" ry="60" fill="url(#fg2)" style="transform:scale(0); transform-origin:200px 310px;"/>
+                <ellipse class="lf" cx="150" cy="282" rx="60" ry="48" fill="url(#fg4)" style="transform:scale(0); transform-origin:150px 282px;"/>
+                <ellipse class="lf" cx="252" cy="282" rx="60" ry="48" fill="url(#fg3)" style="transform:scale(0); transform-origin:252px 282px;"/>
+                <ellipse class="lf" cx="200" cy="258" rx="74" ry="58" fill="url(#fg1)" style="transform:scale(0); transform-origin:200px 258px;"/>
+                <ellipse class="lf" cx="160" cy="232" rx="56" ry="44" fill="url(#fg2)" style="transform:scale(0); transform-origin:160px 232px;"/>
+                <ellipse class="lf" cx="242" cy="232" rx="56" ry="44" fill="url(#fg4)" style="transform:scale(0); transform-origin:242px 232px;"/>
+                <ellipse class="lf" cx="200" cy="208" rx="70" ry="54" fill="url(#fg3)" style="transform:scale(0); transform-origin:200px 208px;"/>
+
+                <!-- Topo extremo -->
+                <ellipse class="lf" cx="200" cy="172" rx="64" ry="50" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:200px 172px;"/>
+                <ellipse class="lf" cx="170" cy="150" rx="48" ry="38" fill="url(#fg2)" style="transform:scale(0); transform-origin:170px 150px;"/>
+                <ellipse class="lf" cx="232" cy="148" rx="48" ry="38" fill="url(#fg4)" style="transform:scale(0); transform-origin:232px 148px;"/>
+                <ellipse class="lf" cx="200" cy="130" rx="55" ry="43" fill="url(#fg3)" style="transform:scale(0); transform-origin:200px 130px;"/>
+                <ellipse class="lf" cx="200" cy="108" rx="44" ry="35" fill="url(#fg1)" style="transform:scale(0); transform-origin:200px 108px;"/>
+                <ellipse class="lf" cx="185" cy="90"  rx="35" ry="28" fill="url(#fg2)" style="transform:scale(0); transform-origin:185px 90px;"/>
+                <ellipse class="lf" cx="215" cy="88"  rx="35" ry="28" fill="url(#fg4)" style="transform:scale(0); transform-origin:215px 88px;"/>
+                <ellipse class="lf" cx="200" cy="72"  rx="28" ry="22" fill="url(#fg3)" style="transform:scale(0); transform-origin:200px 72px;"/>
+
+                <!-- Brilhos / luzes nas folhas -->
+                <ellipse cx="190" cy="138" rx="20" ry="14" fill="#86efac" opacity="0.25" filter="url(#leafBlur)"/>
+                <ellipse cx="148" cy="168" rx="16" ry="10" fill="#4ade80" opacity="0.20" filter="url(#leafBlur)"/>
+                <ellipse cx="252" cy="168" rx="16" ry="10" fill="#4ade80" opacity="0.20" filter="url(#leafBlur)"/>
+            </g>
+
+            <!-- Linha de chão -->
+            <ellipse cx="200" cy="872" rx="80" ry="8" fill="#064E3B" opacity="0.15"/>
+        </svg>
+    </div>
+
+    <!-- WhatsApp Chat Widget -->
+    <div id="whatsappWidget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <div id="chatWindow" class="hidden bg-white rounded-2xl shadow-2xl w-80 md:w-96 mb-4 overflow-hidden border border-forest/10 transform transition-all duration-300 origin-bottom-right">
+            <div class="bg-forest p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <!-- Substituído o ícone pela imagem PNG no chat -->
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center overflow-hidden">
+                        <img src="Logo.png" alt="Menezes Eco Consult" class="w-8 h-8 object-contain">
+                    </div>
+                    <div>
+                        <p class="text-white font-semibold text-sm">Menezes Eco Consult</p>
+                        <p class="text-white/70 text-xs flex items-center gap-1">
+                            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                            Online agora
+                        </p>
+                    </div>
+                </div>
+                <button onclick="toggleWhatsAppChat()" class="text-white/70 hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div id="chatMessages" class="h-80 overflow-y-auto p-4 bg-gray-50 space-y-4">
+                <div class="flex items-start gap-2">
+                    <!-- Substituído o ícone pela imagem PNG na mensagem do chat -->
+                    <div class="w-8 h-8 bg-forest rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
+                        <img src="Logo.png" alt="Menezes" class="w-6 h-6 object-contain">
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
+                        <p class="text-sm text-slate-custom">Olá! 👋 Bem-vindo à Menezes Eco Consult. Qual é o seu nome?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4 bg-white border-t border-gray-100">
+                <form id="chatForm" class="flex gap-2" onsubmit="handleChatSubmit(event)">
+                    <input type="text" id="chatInput" placeholder="Digite sua mensagem..." 
+                           class="flex-1 px-4 py-3 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-teal-accent/50 text-slate-custom"
+                           autocomplete="off">
+                    <button type="submit" class="w-12 h-12 bg-teal-accent rounded-full flex items-center justify-center text-forest hover:bg-forest hover:text-white transition-all duration-300 shadow-lg">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <button onclick="toggleWhatsAppChat()" id="whatsappButton" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+            <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap text-sm font-medium">Falar no WhatsApp</span>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-forest border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center space-x-2">
+                    <!-- Substituído o ícone pela imagem PNG no footer -->
+                    <img src="Logo.png" alt="Menezes Eco Consult" class="h-8 w-auto">
+                    <span class="font-serif text-lg font-semibold text-white">Menezes Eco Consult</span>
+                </div>
+                <div class="flex items-center space-x-8 text-sm text-white/60">
+                    <a href="mailto:contato@menezesecoconsult.com" class="hover:text-teal-accent transition-colors flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        contato@menezesecoconsult.com
+                    </a>
+                    <a href="tel:+551199999999" class="hover:text-teal-accent transition-colors flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +55 (11) 97374-7197
+                    </a>
+                </div>
+                <div class="text-white/40 text-sm">© 2024 Menezes Eco Consult. Todos os direitos reservados.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Mobile Menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Scroll Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        
+        // Navbar
+        window.addEventListener('scroll', () => {
+            const nb = document.getElementById('navbar');
+            if (window.pageYOffset > 100) { nb.classList.add('shadow-lg','bg-white/80'); }
+            else { nb.classList.remove('shadow-lg','bg-white/80'); }
+        });
+
+        // ─────────────────────────────────────────
+        //  ÁRVORE ORGÂNICA — animação por scroll
+        // ─────────────────────────────────────────
+        const trunk      = document.getElementById('trunkSolid');
+        const trunkHL    = document.getElementById('trunkHighlight');
+        const roots      = document.getElementById('roots');
+        const branches   = document.getElementById('branches');
+        const leavesLow  = document.getElementById('leaves-low');
+        const leavesMid  = document.getElementById('leaves-mid');
+        const leavesHigh = document.getElementById('leaves-high');
+        const leavesTop  = document.getElementById('leaves-top');
+        const treeContainer = document.getElementById('treeContainer');
+
+        const TRUNK_LEN  = 1200;
+        const TRUNK_HL   = 900;
+
+        function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+        function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+        function growLeaves(container, progress, delay = 0) {
+            const p = clamp((progress - delay) / (1 - delay), 0, 1);
+            container.style.opacity = Math.min(p * 2, 1);
+            container.querySelectorAll('.lf').forEach((el, i) => {
+                const lp = clamp((p - i * 0.02) * 1.4, 0, 1);
+                const s  = easeOut(lp);
+                el.style.transform = `scale(${s})`;
+            });
+        }
+
+        function updateTree() {
+            const scrollH = document.documentElement.scrollHeight - window.innerHeight;
+            const raw     = Math.min(window.scrollY / scrollH, 1);
+            // Cresce mais rápido — completa a 80% do scroll
+            const sp      = clamp(raw / 0.8, 0, 1);
+            const g       = easeOut(sp);
+
+            // Tronco
+            trunk.style.strokeDashoffset  = TRUNK_LEN  * (1 - g);
+            trunkHL.style.strokeDashoffset = TRUNK_HL  * (1 - g);
+            trunkHL.style.opacity = g * 0.5;
+
+            // Raízes
+            roots.style.opacity = g > 0.05 ? Math.min((g - 0.05) * 10, 1) : 0;
+
+            // Ramos
+            if (g > 0.2) {
+                const bp = clamp((g - 0.2) / 0.4, 0, 1);
+                branches.style.opacity = easeOut(bp);
+            } else {
+                branches.style.opacity = 0;
+            }
+
+            // Folhagem em cascata
+            if (g > 0.30) growLeaves(leavesLow,  g, 0.30);
+            if (g > 0.40) growLeaves(leavesMid,   g, 0.40);
+            if (g > 0.52) growLeaves(leavesHigh,  g, 0.52);
+            if (g > 0.65) growLeaves(leavesTop,   g, 0.65);
+
+            // Fade out perto do footer
+            if (raw > 0.9) {
+                treeContainer.style.opacity = 1 - (raw - 0.9) * 10;
+            } else {
+                treeContainer.style.opacity = 1;
+            }
+        }
+
+        window.addEventListener('scroll', updateTree, { passive: true });
+        updateTree();
+
+        // ─────────────────────────────────────────
+        //  WhatsApp Chat
+        // ─────────────────────────────────────────
+        let chatStep = 0, userName = '', userCompany = '';
+        const phoneNumber = '5511973747197';
+
+        function toggleWhatsAppChat() {
+            const cw = document.getElementById('chatWindow');
+            if (cw.classList.contains('hidden')) {
+                cw.classList.remove('hidden');
+                if (chatStep === -1) resetChat();
+            } else {
+                cw.classList.add('hidden');
+            }
+            lucide.createIcons();
+        }
+
+        function openWhatsAppChat() {
+            document.getElementById('chatWindow').classList.remove('hidden');
+            lucide.createIcons();
+            document.getElementById('chatInput').focus();
+        }
+
+        function resetChat() {
+            chatStep = 0; userName = ''; userCompany = '';
+            document.getElementById('chatMessages').innerHTML = `
+                <div class="flex items-start gap-2">
+                    <div class="w-8 h-8 bg-forest rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
+                        <img src="Logo.png" alt="Menezes" class="w-6 h-6 object-contain">
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
+                        <p class="text-sm text-slate-custom">Olá! 👋 Bem-vindo à Menezes Eco Consult. Qual é o seu nome?</p>
+                    </div>
+                </div>`;
+            lucide.createIcons();
+        }
+
+        function addMessage(text, isUser = false) {
+            const c = document.getElementById('chatMessages');
+            const d = document.createElement('div');
+            d.className = `flex items-start gap-2 ${isUser ? 'flex-row-reverse' : ''}`;
+            
+            if (isUser) {
+                d.innerHTML = `<div class="w-8 h-8 bg-teal-accent rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-4 h-4 text-forest"></i></div>
+                               <div class="bg-teal-accent/20 p-3 rounded-2xl rounded-tr-none shadow-sm max-w-[85%]"><p class="text-sm text-slate-custom">${text}</p></div>`;
+            } else {
+                d.innerHTML = `<div class="w-8 h-8 bg-forest rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
+                                    <img src="Logo.png" alt="Menezes" class="w-6 h-6 object-contain">
+                               </div>
+                               <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]"><p class="text-sm text-slate-custom">${text}</p></div>`;
+            }
+            
+            c.appendChild(d);
+            c.scrollTop = c.scrollHeight;
+            lucide.createIcons();
+        }
+
+        function handleChatSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('chatInput');
+            const val = input.value.trim();
+            if (!val) return;
+            input.value = '';
+
+            if (chatStep === 0) {
+                userName = val;
+                addMessage(val, true);
+                setTimeout(() => { addMessage(`Prazer, ${userName}! 🌿 Qual empresa você representa?`); chatStep = 1; }, 800);
+            } else if (chatStep === 1) {
+                userCompany = val;
+                addMessage(val, true);
+                setTimeout(() => {
+                    addMessage('Entendido! Vou te redirecionar para nosso WhatsApp...');
+                    chatStep = 2;
+                    setTimeout(() => {
+                        const msg = `Olá, me chamo ${userName}, represento a ${userCompany} e gostaria de iniciar um diagnóstico ambiental.`;
+                        window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+                        chatStep = -1;
+                    }, 1500);
+                }, 800);
+            }
+        }
+
+        document.getElementById('chatInput').addEventListener('keypress', e => {
+            if (e.key === 'Enter') handleChatSubmit(e);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); document.getElementById('mobile-menu').classList.add('hidden'); }
+            });
+        });
+
+        document.querySelectorAll('a[href="#contato"]').forEach(btn => {
+            btn.addEventListener('click', e => { e.preventDefault(); openWhatsAppChat(); });
+        });
+    </script>
 </body>
 </html>
