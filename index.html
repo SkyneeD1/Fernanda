@@ -42,10 +42,8 @@
         }
         
         .glass-nav {
-            background: rgba(248, 250, 249, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            background: #064E3B;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .text-gradient {
@@ -196,9 +194,9 @@
 
         .blink { animation: blink-dot 1.2s ease infinite; }
         
-        /* Estilo para a logo */
+        /* Estilo para a logo - SEM FILTRO */
         .logo-image {
-            height: 70px;
+            height: 90px;
             width: auto;
             object-fit: contain;
         }
@@ -219,40 +217,55 @@
             object-fit: contain;
             filter: drop-shadow(0 20px 30px rgba(6, 78, 59, 0.15));
         }
+
+        /* Links do menu no header escuro */
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: white;
+        }
+
+        .mobile-menu-btn {
+            color: white;
+        }
     </style>
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
 
-    <!-- Navigation -->
+    <!-- Navigation - Agora na mesma cor do footer (forest #064E3B) -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
-                    <!-- Apenas a logo, 40% maior -->
+                    <!-- Logo SEM filtro - cores originais -->
                     <img src="Logo.png" alt="Menezes Eco Consult" class="logo-image">
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#servicos" class="text-sm font-medium text-slate-custom hover:text-forest transition-colors">Serviços</a>
-                    <a href="#metodo" class="text-sm font-medium text-slate-custom hover:text-forest transition-colors">O Método</a>
-                    <a href="#industrias" class="text-sm font-medium text-slate-custom hover:text-forest transition-colors">Indústrias</a>
-                    <a href="#contato" class="px-6 py-2.5 bg-forest text-white text-sm font-medium rounded-full hover:bg-opacity-90 transition-all shadow-inner-soft">
+                    <a href="#servicos" class="nav-link text-sm font-medium">Serviços</a>
+                    <a href="#metodo" class="nav-link text-sm font-medium">O Método</a>
+                    <a href="#industrias" class="nav-link text-sm font-medium">Indústrias</a>
+                    <a href="#contato" class="px-6 py-2.5 bg-teal-accent text-forest text-sm font-medium rounded-full hover:bg-opacity-90 transition-all shadow-inner-soft">
                         Consultoria Express
                     </a>
                 </div>
                 
-                <button class="md:hidden" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6 text-forest"></i>
+                <button class="md:hidden mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6 text-white"></i>
                 </button>
             </div>
         </div>
         
-        <div class="hidden md:hidden bg-off-white border-t border-gray-100" id="mobile-menu">
+        <!-- Mobile Menu - Também ajustado para a cor forest -->
+        <div class="hidden md:hidden bg-forest border-t border-white/10" id="mobile-menu">
             <div class="px-6 py-4 space-y-3">
-                <a href="#servicos" class="block text-slate-custom hover:text-forest">Serviços</a>
-                <a href="#metodo" class="block text-slate-custom hover:text-forest">O Método</a>
-                <a href="#industrias" class="block text-slate-custom hover:text-forest">Indústrias</a>
-                <a href="#contato" class="block text-forest font-medium">Consultoria Express</a>
+                <a href="#servicos" class="block text-white/80 hover:text-white">Serviços</a>
+                <a href="#metodo" class="block text-white/80 hover:text-white">O Método</a>
+                <a href="#industrias" class="block text-white/80 hover:text-white">Indústrias</a>
+                <a href="#contato" class="block text-teal-accent font-medium">Consultoria Express</a>
             </div>
         </div>
     </nav>
@@ -310,10 +323,10 @@
                         <div class="relative w-80 h-80 lg:w-[420px] lg:h-[420px]">
                             <div class="absolute inset-0 border-2 border-forest/10 rounded-3xl transform rotate-3"></div>
                             <div class="absolute inset-0 bg-white/60 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/60 overflow-hidden hero-logo-container">
-                                <img src="Logo.png" alt="Menezes Eco Consult" class="hero-logo-image">
+                                <img src="Logo2.png" alt="Menezes Eco Consult" class="hero-logo-image">
                             </div>
                             
-                            <!-- Floating Stats sobrepostos (mantive os parâmetros de clientes) -->
+                            <!-- Floating Stats sobrepostos -->
                             <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur rounded-2xl p-3 shadow-lg border border-white/60">
                                 <div class="flex justify-between items-center">
                                     <div>
@@ -348,7 +361,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-                <!-- Card Licenciamento Ambiental (agora ocupa espaço proporcional) -->
+                <!-- Card Licenciamento Ambiental -->
                 <div class="lg:col-span-2 lg:row-span-2 bento-card bg-white rounded-3xl p-8 shadow-inner-soft border border-forest/5 relative overflow-hidden group reveal">
                     <div class="absolute top-0 right-0 w-40 h-40 bg-teal-accent/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
                     <div class="relative z-10 h-full flex flex-col">
@@ -442,7 +455,6 @@
                         <i data-lucide="calendar" class="w-6 h-6 text-forest"></i>
                     </div>
                     <div class="text-left">
-                        <!-- Alterado para 10 anos de experiência -->
                         <p class="text-2xl font-serif font-semibold text-forest">10+</p>
                         <p class="text-sm text-slate-custom">Anos de Experiência</p>
                     </div>
@@ -552,7 +564,7 @@
         <div id="chatWindow" class="hidden bg-white rounded-2xl shadow-2xl w-80 md:w-96 mb-4 overflow-hidden border border-forest/10 transform transition-all duration-300 origin-bottom-right">
             <div class="bg-forest p-4 flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <!-- Logo no chat -->
+                    <!-- Logo no chat - SEM filtro -->
                     <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center overflow-hidden">
                         <img src="Logo.png" alt="Menezes Eco Consult" class="w-8 h-8 object-contain">
                     </div>
@@ -571,7 +583,7 @@
             
             <div id="chatMessages" class="h-80 overflow-y-auto p-4 bg-gray-50 space-y-4">
                 <div class="flex items-start gap-2">
-                    <!-- Logo na mensagem do chat -->
+                    <!-- Logo na mensagem do chat - SEM filtro -->
                     <div class="w-8 h-8 bg-forest rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                         <img src="Logo.png" alt="Menezes" class="w-6 h-6 object-contain">
                     </div>
@@ -604,7 +616,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center space-x-2">
-                    <!-- Logo no footer -->
+                    <!-- Logo no footer - SEM filtro -->
                     <img src="Logo.png" alt="Menezes Eco Consult" class="h-10 w-auto">
                 </div>
                 <div class="flex items-center space-x-8 text-sm text-white/60">
@@ -636,16 +648,17 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
         
-        // Navbar
+        // Navbar - Ajustado para manter a cor forest mesmo com scroll
         window.addEventListener('scroll', () => {
             const nb = document.getElementById('navbar');
-            if (window.pageYOffset > 100) { nb.classList.add('shadow-lg','bg-white/80'); }
-            else { nb.classList.remove('shadow-lg','bg-white/80'); }
+            if (window.pageYOffset > 100) { 
+                nb.classList.add('shadow-lg'); 
+            } else { 
+                nb.classList.remove('shadow-lg'); 
+            }
         });
 
-        // ─────────────────────────────────────────
-        //  WhatsApp Chat
-        // ─────────────────────────────────────────
+        // WhatsApp Chat
         let chatStep = 0, userName = '', userCompany = '';
         const phoneNumber = '5511973747197';
 
