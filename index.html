@@ -154,49 +154,6 @@
             animation: float 6s ease-in-out infinite;
         }
 
-        /* =============================================
-           ÁRVORE ORGÂNICA - estilos aprimorados
-        ============================================= */
-        #treeContainer {
-            pointer-events: none;
-        }
-
-        /* Folha base */
-        .leaf-cluster {
-            transform-origin: center bottom;
-            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
-            transform: scale(0);
-            opacity: 0;
-        }
-
-        /* Animação de balanço suave das folhas depois de crescer */
-        @keyframes sway {
-            0%, 100% { transform: rotate(-2deg) scale(1); }
-            50%       { transform: rotate(2deg)  scale(1); }
-        }
-
-        .leaf-cluster.grown {
-            animation: sway 4s ease-in-out infinite;
-        }
-
-        /* Tronco animado */
-        #trunkPath {
-            stroke-dasharray: 1200;
-            stroke-dashoffset: 1200;
-            transition: stroke-dashoffset 0.05s linear;
-        }
-
-        /* Ramos animados */
-        .branch-path {
-            stroke-dasharray: 600;
-            stroke-dashoffset: 600;
-            transition: stroke-dashoffset 0.4s ease-out, opacity 0.3s ease;
-            opacity: 0;
-        }
-
-        /* =============================================
-           ILUSTRAÇÃO TÉCNICA AMBIENTAL - animações
-        ============================================= */
         @keyframes dash-flow {
             to { stroke-dashoffset: -20; }
         }
@@ -241,9 +198,26 @@
         
         /* Estilo para a logo */
         .logo-image {
-            height: 48px;
+            height: 70px;
             width: auto;
             object-fit: contain;
+        }
+        
+        /* Container da logo grande no hero */
+        .hero-logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+        }
+        
+        .hero-logo-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 30px rgba(6, 78, 59, 0.15));
         }
     </style>
 </head>
@@ -251,15 +225,11 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-9 lg:px-11">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-2">
-                    <!-- Substituído o ícone pela imagem PNG -->
-                    <img src="Logo.png" alt="" class="logo-image">
-                    <div class="flex flex-col">
-                        <span class="font-serif text-xl font-semibold text-forest tracking-tight">Menezes</span>
-                        <span class="text-xs text-slate-custom tracking-widest uppercase">Eco Consult</span>
-                    </div>
+                <div class="flex items-center">
+                    <!-- Apenas a logo, 40% maior -->
+                    <img src="Logo.png" alt="Menezes Eco Consult" class="logo-image">
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
@@ -328,7 +298,7 @@
                     </div>
                 </div>
                 
-                <!-- Right Visual — Ilustração técnica de engenharia ambiental -->
+                <!-- Right Visual — Logo grande no centro -->
                 <div class="relative lg:h-[600px] flex items-center justify-center reveal active">
                     <div class="absolute inset-0 hero-abstract rounded-3xl grid-pattern"></div>
                     
@@ -336,196 +306,31 @@
                         <div class="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-teal-accent/20 to-forest/10 rounded-full blur-3xl float-element"></div>
                         <div class="absolute bottom-20 left-10 w-48 h-48 bg-gradient-to-tr from-forest/10 to-teal-accent/20 rounded-full blur-2xl float-element" style="animation-delay: 2s;"></div>
                         
-                        <!-- Ilustração SVG Técnica Ambiental -->
+                        <!-- Container com a logo grande -->
                         <div class="relative w-80 h-80 lg:w-[420px] lg:h-[420px]">
                             <div class="absolute inset-0 border-2 border-forest/10 rounded-3xl transform rotate-3"></div>
-                            <div class="absolute inset-0 bg-white/60 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/60 overflow-hidden p-4">
-                                
-                                <svg viewBox="0 0 380 360" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                                    <defs>
-                                        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="#e8f5e9"/>
-                                            <stop offset="100%" stop-color="#f1f8e9"/>
-                                        </linearGradient>
-                                        <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="#b2dfdb"/>
-                                            <stop offset="100%" stop-color="#80cbc4"/>
-                                        </linearGradient>
-                                        <linearGradient id="soilGrad" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="#8d6e63"/>
-                                            <stop offset="40%" stop-color="#6d4c41"/>
-                                            <stop offset="100%" stop-color="#4e342e"/>
-                                        </linearGradient>
-                                        <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
-                                            <stop offset="0%" stop-color="#43a047"/>
-                                            <stop offset="100%" stop-color="#1b5e20"/>
-                                        </linearGradient>
-                                        <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="#2DD4BF"/>
-                                            <stop offset="100%" stop-color="#0f766e"/>
-                                        </linearGradient>
-                                        <filter id="soft-shadow">
-                                            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#064E3B" flood-opacity="0.15"/>
-                                        </filter>
-                                        <clipPath id="card-clip">
-                                            <rect width="380" height="360" rx="16"/>
-                                        </clipPath>
-                                    </defs>
-
-                                    <g clip-path="url(#card-clip)">
-
-                                    <!-- Fundo céu/ambiente -->
-                                    <rect width="380" height="360" fill="url(#skyGrad)" rx="16"/>
-
-                                    <!-- ── TERRENO ── -->
-                                    <!-- Camadas de solo visíveis (corte transversal) -->
-                                    <rect x="0" y="220" width="380" height="140" fill="#6d4c41" opacity="0.15" rx="0"/>
-                                    <!-- Superfície verde -->
-                                    <ellipse cx="190" cy="220" rx="195" ry="12" fill="#388e3c" opacity="0.25"/>
-                                    <!-- Grama estilizada -->
-                                    <g fill="#2e7d32" opacity="0.6">
-                                        <path d="M20 220 Q22 210 24 220"/>
-                                        <path d="M30 219 Q33 207 36 219"/>
-                                        <path d="M50 220 Q52 212 54 220"/>
-                                        <path d="M65 218 Q68 208 71 218"/>
-                                        <path d="M280 219 Q283 209 286 219"/>
-                                        <path d="M300 220 Q302 211 304 220"/>
-                                        <path d="M320 219 Q323 207 326 219"/>
-                                        <path d="M340 220 Q342 212 344 220"/>
-                                        <path d="M360 218 Q362 210 364 218"/>
-                                    </g>
-
-                                    <!-- ── ÁRVORE CENTRAL ── -->
-                                    <!-- Tronco -->
-                                    <rect x="182" y="165" width="16" height="58" fill="#5d4037" rx="4"/>
-                                    <!-- Copa principal -->
-                                    <ellipse cx="190" cy="140" rx="42" ry="38" fill="url(#leafGrad)" filter="url(#soft-shadow)"/>
-                                    <!-- Copa secundária esquerda -->
-                                    <ellipse cx="162" cy="155" rx="28" ry="24" fill="#388e3c"/>
-                                    <!-- Copa secundária direita -->
-                                    <ellipse cx="218" cy="155" rx="28" ry="24" fill="#2e7d32"/>
-                                    <!-- Brilho copa -->
-                                    <ellipse cx="180" cy="128" rx="18" ry="12" fill="#66bb6a" opacity="0.35"/>
-
-                                    <!-- ── SENSOR / ESTAÇÃO DE MONITORAMENTO ── -->
-                                    <!-- Poste -->
-                                    <rect x="305" y="160" width="5" height="62" fill="#455a64" rx="2"/>
-                                    <!-- Caixa sensor -->
-                                    <rect x="295" y="148" width="26" height="18" rx="4" fill="#064E3B" filter="url(#soft-shadow)"/>
-                                    <rect x="297" y="150" width="22" height="14" rx="3" fill="#0f766e"/>
-                                    <!-- Display mini -->
-                                    <rect x="299" y="152" width="10" height="8" rx="1" fill="#2DD4BF" opacity="0.8"/>
-                                    <!-- LED piscando -->
-                                    <circle cx="316" cy="156" r="2.5" fill="#00e676" class="blink"/>
-                                    <!-- Antena -->
-                                    <line x1="308" y1="148" x2="308" y2="138" stroke="#455a64" stroke-width="2" stroke-linecap="round"/>
-                                    <circle cx="308" cy="136" r="2" fill="#2DD4BF"/>
-                                    <!-- Ondas de sinal -->
-                                    <circle cx="308" cy="136" r="6" fill="none" stroke="#2DD4BF" stroke-width="1" opacity="0.5" class="pulse-ring"/>
-                                    <circle cx="308" cy="136" r="6" fill="none" stroke="#2DD4BF" stroke-width="1" opacity="0.5" class="pulse-ring" style="animation-delay:0.6s"/>
-
-                                    <!-- ── CORPO HÍDRICO / RIO ── -->
-                                    <path d="M0 258 Q40 250 80 258 Q120 266 160 258 Q200 250 240 256 Q280 262 320 255 Q350 250 380 256" 
-                                          fill="none" stroke="#4dd0e1" stroke-width="10" stroke-linecap="round" opacity="0.5"/>
-                                    <path d="M0 265 Q50 257 100 265 Q150 273 200 264 Q250 256 300 264 Q340 271 380 263" 
-                                          fill="none" stroke="#80deea" stroke-width="6" stroke-linecap="round" opacity="0.4"/>
-                                    <!-- Seta de fluxo hídrico -->
-                                    <path d="M40 260 L70 260" stroke="#00838f" stroke-width="2" stroke-dasharray="4 3" class="flow-line" marker-end="url(#arr)"/>
-                                    <defs>
-                                        <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                                            <path d="M0,0 L6,3 L0,6 Z" fill="#00838f"/>
-                                        </marker>
-                                    </defs>
-                                    <!-- Label rio -->
-                                    <text x="190" y="282" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="7" fill="#00838f" font-weight="600" letter-spacing="1">CORPO HÍDRICO MONITORADO</text>
-
-                                    <!-- ── SONDA DE SOLO (à esquerda) ── -->
-                                    <!-- Haste -->
-                                    <rect x="62" y="200" width="4" height="38" fill="#78909c" rx="1"/>
-                                    <!-- Cabeça sensor -->
-                                    <rect x="56" y="193" width="16" height="12" rx="3" fill="#064E3B" filter="url(#soft-shadow)"/>
-                                    <rect x="58" y="195" width="12" height="8" rx="2" fill="#1de9b6" opacity="0.7"/>
-                                    <!-- Fio de dados -->
-                                    <path d="M72 199 Q90 195 105 198" stroke="#37474f" stroke-width="1.5" stroke-dasharray="3 2" fill="none"/>
-                                    <!-- Label -->
-                                    <text x="64" y="188" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6.5" fill="#064E3B" font-weight="700">SOLO</text>
-
-                                    <!-- ── PAINEL SOLAR (canto superior esquerdo) ── -->
-                                    <rect x="22" y="88" width="50" height="32" rx="4" fill="#1565c0" opacity="0.85" filter="url(#soft-shadow)"/>
-                                    <!-- Grade do painel -->
-                                    <line x1="32" y1="88" x2="32" y2="120" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
-                                    <line x1="42" y1="88" x2="42" y2="120" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
-                                    <line x1="52" y1="88" x2="52" y2="120" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
-                                    <line x1="62" y1="88" x2="62" y2="120" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
-                                    <line x1="22" y1="100" x2="72" y2="100" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
-                                    <line x1="22" y1="110" x2="72" y2="110" stroke="#42a5f5" stroke-width="0.8" opacity="0.6"/>
-                                    <rect x="22" y="88" width="50" height="32" rx="4" fill="none" stroke="#90caf9" stroke-width="1.5" opacity="0.8"/>
-                                    <!-- Raio solar -->
-                                    <line x1="47" y1="78" x2="47" y2="83" stroke="#fdd835" stroke-width="2" stroke-linecap="round"/>
-                                    <line x1="35" y1="82" x2="38" y2="85" stroke="#fdd835" stroke-width="2" stroke-linecap="round"/>
-                                    <line x1="59" y1="82" x2="56" y2="85" stroke="#fdd835" stroke-width="2" stroke-linecap="round"/>
-                                    <circle cx="47" cy="75" r="5" fill="#fdd835" opacity="0.9"/>
-
-                                    <!-- ── GRÁFICO DE BARRAS (canto inferior direito) ── -->
-                                    <rect x="240" y="292" width="128" height="58" rx="8" fill="white" opacity="0.92" filter="url(#soft-shadow)"/>
-                                    <text x="304" y="305" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6" fill="#064E3B" font-weight="700" letter-spacing="0.5">QUALIDADE DO AR — IQA</text>
-                                    <!-- Eixo -->
-                                    <line x1="252" y1="340" x2="360" y2="340" stroke="#cfd8dc" stroke-width="1"/>
-                                    <!-- Barras animadas -->
-                                    <g>
-                                        <rect class="bar-anim" x="257" y="316" width="14" height="24" fill="url(#barGrad)" rx="3" opacity="0.85"/>
-                                        <rect class="bar-anim" x="276" y="308" width="14" height="32" fill="url(#barGrad)" rx="3" opacity="0.9"/>
-                                        <rect class="bar-anim" x="295" y="320" width="14" height="20" fill="url(#barGrad)" rx="3" opacity="0.8"/>
-                                        <rect class="bar-anim" x="314" y="312" width="14" height="28" fill="url(#barGrad)" rx="3" opacity="0.9"/>
-                                        <rect class="bar-anim" x="333" y="305" width="14" height="35" fill="#43a047" rx="3" opacity="0.85"/>
-                                    </g>
-                                    <!-- Linha de referência -->
-                                    <line x1="252" y1="322" x2="360" y2="322" stroke="#ff7043" stroke-width="1" stroke-dasharray="4 2" opacity="0.6"/>
-                                    <text x="362" y="325" font-family="Plus Jakarta Sans,sans-serif" font-size="5.5" fill="#ff7043">ref.</text>
-
-                                    <!-- ── PONTO DE COLETA / BIODIVERSIDADE ── -->
-                                    <circle cx="140" cy="295" r="5" fill="#2DD4BF" filter="url(#soft-shadow)"/>
-                                    <circle cx="140" cy="295" r="9" fill="none" stroke="#2DD4BF" stroke-width="1.5" opacity="0.5"/>
-                                    <text x="140" y="315" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6" fill="#064E3B" font-weight="700">PONTO P-01</text>
-
-                                    <circle cx="88" cy="300" r="4" fill="#81c784" filter="url(#soft-shadow)"/>
-                                    <text x="88" y="318" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6" fill="#064E3B">P-02</text>
-
-                                    <circle cx="200" cy="290" r="4" fill="#ffd54f" filter="url(#soft-shadow)"/>
-                                    <text x="200" y="308" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6" fill="#064E3B">P-03</text>
-
-                                    <!-- Linha conectando pontos de coleta -->
-                                    <path d="M88 300 L140 295 L200 290" fill="none" stroke="#064E3B" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>
-
-                                    <!-- ── LABEL SUPERIOR ── -->
-                                    <rect x="100" y="14" width="180" height="22" rx="11" fill="#064E3B" opacity="0.9"/>
-                                    <text x="190" y="29" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="8" fill="#2DD4BF" font-weight="700" letter-spacing="1">MONITORAMENTO AMBIENTAL</text>
-
-                                    <!-- Linha de scan (efeito de análise técnica) -->
-                                    <rect x="0" y="40" width="380" height="2" fill="url(#barGrad)" opacity="0.12" class="scan"/>
-
-                                    </g><!-- fim clip -->
-                                </svg>
-
-                                <!-- Floating Stats sobrepostos -->
-                                <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur rounded-2xl p-3 shadow-lg border border-white/60">
-                                    <div class="flex justify-between items-center">
-                                        <div>
-                                            <p class="text-xs text-slate-custom uppercase tracking-wider">Projetos Ativos</p>
-                                            <p class="text-2xl font-serif font-semibold text-forest">+500</p>
-                                        </div>
-                                        <div class="h-10 w-px bg-forest/10"></div>
-                                        <div>
-                                            <p class="text-xs text-slate-custom uppercase tracking-wider">Taxa de Aprovação</p>
-                                            <p class="text-2xl font-serif font-semibold text-forest">99.8%</p>
-                                        </div>
+                            <div class="absolute inset-0 bg-white/60 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/60 overflow-hidden hero-logo-container">
+                                <img src="Logo.png" alt="Menezes Eco Consult" class="hero-logo-image">
+                            </div>
+                            
+                            <!-- Floating Stats sobrepostos (mantive os parâmetros de clientes) -->
+                            <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur rounded-2xl p-3 shadow-lg border border-white/60">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-xs text-slate-custom uppercase tracking-wider">Projetos Ativos</p>
+                                        <p class="text-2xl font-serif font-semibold text-forest">+500</p>
+                                    </div>
+                                    <div class="h-10 w-px bg-forest/10"></div>
+                                    <div>
+                                        <p class="text-xs text-slate-custom uppercase tracking-wider">Taxa de Aprovação</p>
+                                        <p class="text-2xl font-serif font-semibold text-forest">99.8%</p>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="absolute -top-4 -right-4 w-20 h-20 border border-teal-accent/30 rounded-full flex items-center justify-center">
-                                <i data-lucide="trending-up" class="w-8 h-8 text-teal-accent"></i>
-                            </div>
+                        </div>
+                        
+                        <div class="absolute -top-4 -right-4 w-20 h-20 border border-teal-accent/30 rounded-full flex items-center justify-center">
+                            <i data-lucide="trending-up" class="w-8 h-8 text-teal-accent"></i>
                         </div>
                     </div>
                 </div>
@@ -657,7 +462,8 @@
                         <i data-lucide="calendar" class="w-6 h-6 text-forest"></i>
                     </div>
                     <div class="text-left">
-                        <p class="text-2xl font-serif font-semibold text-forest">12+</p>
+                        <!-- Alterado para 10 anos de experiência -->
+                        <p class="text-2xl font-serif font-semibold text-forest">10+</p>
                         <p class="text-sm text-slate-custom">Anos de Experiência</p>
                     </div>
                 </div>
@@ -761,245 +567,12 @@
         </div>
     </section>
 
-    <!-- =============================================
-         ÁRVORE ORGÂNICA — SVG rico com copa densa
-    ============================================= -->
-    <div class="fixed right-0 lg:right-4 top-0 h-screen w-40 lg:w-72 z-30 pointer-events-none hidden md:block" id="treeContainer">
-        <svg id="treeSVG" viewBox="0 0 400 900" class="w-full h-full" preserveAspectRatio="xMidYMax meet">
-            <defs>
-                <!-- Tronco -->
-                <linearGradient id="trunkG" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#022c22"/>
-                    <stop offset="50%" stop-color="#064E3B"/>
-                    <stop offset="100%" stop-color="#065f46"/>
-                </linearGradient>
-
-                <!-- Folhagem — múltiplos verdes para profundidade -->
-                <radialGradient id="fg1" cx="40%" cy="40%" r="60%">
-                    <stop offset="0%" stop-color="#4ade80"/>
-                    <stop offset="50%" stop-color="#16a34a"/>
-                    <stop offset="100%" stop-color="#14532d"/>
-                </radialGradient>
-                <radialGradient id="fg2" cx="55%" cy="35%" r="55%">
-                    <stop offset="0%" stop-color="#86efac"/>
-                    <stop offset="50%" stop-color="#22c55e"/>
-                    <stop offset="100%" stop-color="#15803d"/>
-                </radialGradient>
-                <radialGradient id="fg3" cx="45%" cy="45%" r="50%">
-                    <stop offset="0%" stop-color="#2DD4BF"/>
-                    <stop offset="60%" stop-color="#0d9488"/>
-                    <stop offset="100%" stop-color="#064E3B"/>
-                </radialGradient>
-                <radialGradient id="fg4" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#34d399"/>
-                    <stop offset="55%" stop-color="#059669"/>
-                    <stop offset="100%" stop-color="#064E3B"/>
-                </radialGradient>
-
-                <filter id="leafBlur">
-                    <feGaussianBlur stdDeviation="1.5"/>
-                </filter>
-                <filter id="leafShadow">
-                    <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#022c22" flood-opacity="0.25"/>
-                </filter>
-            </defs>
-
-            <!-- Solo / raízes -->
-            <g id="roots" opacity="0">
-                <path d="M195 870 Q175 855 155 865 Q140 872 135 880" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
-                <path d="M200 875 Q200 862 200 880" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-                <path d="M205 870 Q225 855 245 865 Q260 872 265 882" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
-                <path d="M175 875 Q160 870 145 880" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
-                <path d="M225 875 Q240 870 255 882" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
-            </g>
-
-            <!-- Tronco principal (forma sólida, orgânica) -->
-            <path id="trunkSolid"
-                  d="M188 870
-                     C186 820 184 780 183 740
-                     C182 700 184 670 186 640
-                     C188 610 190 580 191 550
-                     C192 510 191 480 190 450
-                     C189 410 190 380 192 350
-                     C194 310 196 280 196 250
-                     C196 220 195 190 196 160"
-                  stroke="url(#trunkG)" stroke-width="22" fill="none" stroke-linecap="round"
-                  style="stroke-dasharray:1200; stroke-dashoffset:1200; transition: stroke-dashoffset 0.05s linear;"/>
-
-            <!-- Tronco highlight (brilho lateral) -->
-            <path id="trunkHighlight"
-                  d="M192 870 C190 820 189 760 190 700 C191 640 193 580 194 520 C195 460 195 400 196 340 C197 290 197 240 198 190"
-                  stroke="#0f766e" stroke-width="6" fill="none" stroke-linecap="round" opacity="0"
-                  style="stroke-dasharray:900; stroke-dashoffset:900; transition: stroke-dashoffset 0.05s linear;"/>
-
-            <!-- ── RAMOS (12 ramos em ambos os lados) ── -->
-            <g id="branches" opacity="0" style="transition: opacity 0.5s ease;">
-
-                <!-- Lado esquerdo -->
-                <path class="br" d="M186 720 Q150 690 110 670 Q80 655 55 645" stroke="#064E3B" stroke-width="10" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M110 670 Q85 650 65 635" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M110 670 Q100 640 88 615" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M185 650 Q145 615 105 590 Q75 572 45 558" stroke="#064E3B" stroke-width="9" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M105 590 Q78 572 55 556" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M187 570 Q148 535 108 510 Q78 492 48 475" stroke="#064E3B" stroke-width="8" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M108 510 Q82 494 60 478" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M108 510 Q96 482 82 456" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M188 490 Q150 455 112 428 Q82 406 52 388" stroke="#064E3B" stroke-width="7" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M112 428 Q86 410 64 392" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M189 400 Q155 366 120 340 Q92 318 68 302" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M120 340 Q96 320 76 302" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M191 310 Q160 278 130 255 Q106 236 86 222" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M130 255 Q108 235 90 220" stroke="#064E3B" stroke-width="3" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M192 230 Q168 204 145 183 Q125 166 110 152" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
-
-                <!-- Lado direito -->
-                <path class="br" d="M214 720 Q252 690 294 670 Q325 654 352 644" stroke="#064E3B" stroke-width="10" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M294 670 Q320 652 342 636" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M294 670 Q308 642 320 616" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M215 650 Q255 615 296 590 Q328 572 358 557" stroke="#064E3B" stroke-width="9" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M296 590 Q324 573 350 558" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M213 570 Q255 534 296 509 Q328 490 358 474" stroke="#064E3B" stroke-width="8" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M296 509 Q322 492 346 478" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M296 509 Q310 480 325 454" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M212 490 Q252 455 292 428 Q324 406 356 387" stroke="#064E3B" stroke-width="7" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M292 428 Q318 410 342 393" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M211 400 Q248 366 286 340 Q316 318 344 303" stroke="#064E3B" stroke-width="6" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M286 340 Q312 320 336 304" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M210 310 Q244 276 278 252 Q306 232 328 218" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M278 252 Q302 232 322 218" stroke="#064E3B" stroke-width="3" fill="none" stroke-linecap="round"/>
-
-                <path class="br" d="M208 230 Q236 203 262 182 Q284 164 302 152" stroke="#064E3B" stroke-width="4" fill="none" stroke-linecap="round"/>
-
-                <!-- Centro (vertical) -->
-                <path class="br" d="M196 280 Q194 240 192 200 Q190 170 188 145" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-                <path class="br" d="M200 280 Q202 240 204 200 Q206 168 208 145" stroke="#064E3B" stroke-width="5" fill="none" stroke-linecap="round"/>
-            </g>
-
-            <!-- ── COPA — elipses sobrepostas (estilo Impressionista) ── -->
-            <!-- Cada grupo de folhagem cresce ao fazer scroll -->
-            <!-- Parte baixa da copa -->
-            <g id="leaves-low" style="opacity:0; transition: opacity 0.5s ease;">
-                <!-- Esquerda baixa -->
-                <ellipse class="lf" cx="72"  cy="650" rx="52" ry="40" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:72px 650px;"/>
-                <ellipse class="lf" cx="52"  cy="630" rx="38" ry="30" fill="url(#fg2)" style="transform:scale(0); transform-origin:52px 630px;"/>
-                <ellipse class="lf" cx="95"  cy="618" rx="44" ry="34" fill="url(#fg4)" style="transform:scale(0); transform-origin:95px 618px;"/>
-                <ellipse class="lf" cx="62"  cy="608" rx="30" ry="24" fill="url(#fg3)" style="transform:scale(0); transform-origin:62px 608px;"/>
-
-                <!-- Direita baixa -->
-                <ellipse class="lf" cx="332" cy="648" rx="52" ry="40" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:332px 648px;"/>
-                <ellipse class="lf" cx="352" cy="628" rx="38" ry="30" fill="url(#fg2)" style="transform:scale(0); transform-origin:352px 628px;"/>
-                <ellipse class="lf" cx="308" cy="618" rx="44" ry="34" fill="url(#fg4)" style="transform:scale(0); transform-origin:308px 618px;"/>
-                <ellipse class="lf" cx="345" cy="605" rx="30" ry="24" fill="url(#fg3)" style="transform:scale(0); transform-origin:345px 605px;"/>
-            </g>
-
-            <!-- Parte média da copa -->
-            <g id="leaves-mid" style="opacity:0; transition: opacity 0.5s ease;">
-                <!-- Esquerda média -->
-                <ellipse class="lf" cx="58"  cy="550" rx="58" ry="44" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:58px 550px;"/>
-                <ellipse class="lf" cx="38"  cy="530" rx="42" ry="32" fill="url(#fg2)" style="transform:scale(0); transform-origin:38px 530px;"/>
-                <ellipse class="lf" cx="88"  cy="515" rx="50" ry="38" fill="url(#fg4)" style="transform:scale(0); transform-origin:88px 515px;"/>
-                <ellipse class="lf" cx="48"  cy="502" rx="36" ry="28" fill="url(#fg3)" style="transform:scale(0); transform-origin:48px 502px;"/>
-                <ellipse class="lf" cx="105" cy="490" rx="38" ry="30" fill="url(#fg1)" style="transform:scale(0); transform-origin:105px 490px;"/>
-
-                <!-- Direita média -->
-                <ellipse class="lf" cx="345" cy="548" rx="58" ry="44" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:345px 548px;"/>
-                <ellipse class="lf" cx="365" cy="528" rx="42" ry="32" fill="url(#fg2)" style="transform:scale(0); transform-origin:365px 528px;"/>
-                <ellipse class="lf" cx="315" cy="515" rx="50" ry="38" fill="url(#fg4)" style="transform:scale(0); transform-origin:315px 515px;"/>
-                <ellipse class="lf" cx="355" cy="500" rx="36" ry="28" fill="url(#fg3)" style="transform:scale(0); transform-origin:355px 500px;"/>
-                <ellipse class="lf" cx="298" cy="488" rx="38" ry="30" fill="url(#fg1)" style="transform:scale(0); transform-origin:298px 488px;"/>
-
-                <!-- Centro médio -->
-                <ellipse class="lf" cx="200" cy="530" rx="55" ry="42" fill="url(#fg2)" style="transform:scale(0); transform-origin:200px 530px;"/>
-                <ellipse class="lf" cx="175" cy="515" rx="40" ry="30" fill="url(#fg4)" style="transform:scale(0); transform-origin:175px 515px;"/>
-                <ellipse class="lf" cx="225" cy="515" rx="40" ry="30" fill="url(#fg3)" style="transform:scale(0); transform-origin:225px 515px;"/>
-            </g>
-
-            <!-- Parte alta da copa -->
-            <g id="leaves-high" style="opacity:0; transition: opacity 0.5s ease;">
-                <!-- Esquerda alta -->
-                <ellipse class="lf" cx="72"  cy="440" rx="62" ry="48" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:72px 440px;"/>
-                <ellipse class="lf" cx="45"  cy="418" rx="46" ry="36" fill="url(#fg2)" style="transform:scale(0); transform-origin:45px 418px;"/>
-                <ellipse class="lf" cx="100" cy="405" rx="54" ry="42" fill="url(#fg4)" style="transform:scale(0); transform-origin:100px 405px;"/>
-                <ellipse class="lf" cx="58"  cy="392" rx="40" ry="32" fill="url(#fg3)" style="transform:scale(0); transform-origin:58px 392px;"/>
-                <ellipse class="lf" cx="115" cy="378" rx="44" ry="34" fill="url(#fg1)" style="transform:scale(0); transform-origin:115px 378px;"/>
-                <ellipse class="lf" cx="78"  cy="368" rx="36" ry="28" fill="url(#fg2)" style="transform:scale(0); transform-origin:78px 368px;"/>
-
-                <!-- Direita alta -->
-                <ellipse class="lf" cx="330" cy="440" rx="62" ry="48" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:330px 440px;"/>
-                <ellipse class="lf" cx="358" cy="418" rx="46" ry="36" fill="url(#fg2)" style="transform:scale(0); transform-origin:358px 418px;"/>
-                <ellipse class="lf" cx="302" cy="405" rx="54" ry="42" fill="url(#fg4)" style="transform:scale(0); transform-origin:302px 405px;"/>
-                <ellipse class="lf" cx="345" cy="390" rx="40" ry="32" fill="url(#fg3)" style="transform:scale(0); transform-origin:345px 390px;"/>
-                <ellipse class="lf" cx="288" cy="378" rx="44" ry="34" fill="url(#fg1)" style="transform:scale(0); transform-origin:288px 378px;"/>
-                <ellipse class="lf" cx="325" cy="366" rx="36" ry="28" fill="url(#fg2)" style="transform:scale(0); transform-origin:325px 366px;"/>
-
-                <!-- Centro alto -->
-                <ellipse class="lf" cx="200" cy="420" rx="70" ry="54" fill="url(#fg2)" style="transform:scale(0); transform-origin:200px 420px;"/>
-                <ellipse class="lf" cx="162" cy="398" rx="52" ry="40" fill="url(#fg4)" style="transform:scale(0); transform-origin:162px 398px;"/>
-                <ellipse class="lf" cx="240" cy="398" rx="52" ry="40" fill="url(#fg3)" style="transform:scale(0); transform-origin:240px 398px;"/>
-                <ellipse class="lf" cx="200" cy="378" rx="60" ry="46" fill="url(#fg1)" style="transform:scale(0); transform-origin:200px 378px;"/>
-                <ellipse class="lf" cx="170" cy="360" rx="42" ry="34" fill="url(#fg2)" style="transform:scale(0); transform-origin:170px 360px;"/>
-                <ellipse class="lf" cx="232" cy="360" rx="42" ry="34" fill="url(#fg4)" style="transform:scale(0); transform-origin:232px 360px;"/>
-            </g>
-
-            <!-- Copa superior / topo (mais densa) -->
-            <g id="leaves-top" style="opacity:0; transition: opacity 0.5s ease;">
-                <!-- Espalhamento por todo o topo -->
-                <ellipse class="lf" cx="98"  cy="308" rx="58" ry="46" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:98px 308px;"/>
-                <ellipse class="lf" cx="68"  cy="285" rx="44" ry="36" fill="url(#fg2)" style="transform:scale(0); transform-origin:68px 285px;"/>
-                <ellipse class="lf" cx="130" cy="272" rx="52" ry="40" fill="url(#fg4)" style="transform:scale(0); transform-origin:130px 272px;"/>
-                <ellipse class="lf" cx="80"  cy="258" rx="40" ry="30" fill="url(#fg3)" style="transform:scale(0); transform-origin:80px 258px;"/>
-
-                <ellipse class="lf" cx="305" cy="308" rx="58" ry="46" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:305px 308px;"/>
-                <ellipse class="lf" cx="335" cy="285" rx="44" ry="36" fill="url(#fg2)" style="transform:scale(0); transform-origin:335px 285px;"/>
-                <ellipse class="lf" cx="272" cy="272" rx="52" ry="40" fill="url(#fg4)" style="transform:scale(0); transform-origin:272px 272px;"/>
-                <ellipse class="lf" cx="322" cy="258" rx="40" ry="30" fill="url(#fg3)" style="transform:scale(0); transform-origin:322px 258px;"/>
-
-                <ellipse class="lf" cx="200" cy="310" rx="78" ry="60" fill="url(#fg2)" style="transform:scale(0); transform-origin:200px 310px;"/>
-                <ellipse class="lf" cx="150" cy="282" rx="60" ry="48" fill="url(#fg4)" style="transform:scale(0); transform-origin:150px 282px;"/>
-                <ellipse class="lf" cx="252" cy="282" rx="60" ry="48" fill="url(#fg3)" style="transform:scale(0); transform-origin:252px 282px;"/>
-                <ellipse class="lf" cx="200" cy="258" rx="74" ry="58" fill="url(#fg1)" style="transform:scale(0); transform-origin:200px 258px;"/>
-                <ellipse class="lf" cx="160" cy="232" rx="56" ry="44" fill="url(#fg2)" style="transform:scale(0); transform-origin:160px 232px;"/>
-                <ellipse class="lf" cx="242" cy="232" rx="56" ry="44" fill="url(#fg4)" style="transform:scale(0); transform-origin:242px 232px;"/>
-                <ellipse class="lf" cx="200" cy="208" rx="70" ry="54" fill="url(#fg3)" style="transform:scale(0); transform-origin:200px 208px;"/>
-
-                <!-- Topo extremo -->
-                <ellipse class="lf" cx="200" cy="172" rx="64" ry="50" fill="url(#fg1)" filter="url(#leafShadow)" style="transform:scale(0); transform-origin:200px 172px;"/>
-                <ellipse class="lf" cx="170" cy="150" rx="48" ry="38" fill="url(#fg2)" style="transform:scale(0); transform-origin:170px 150px;"/>
-                <ellipse class="lf" cx="232" cy="148" rx="48" ry="38" fill="url(#fg4)" style="transform:scale(0); transform-origin:232px 148px;"/>
-                <ellipse class="lf" cx="200" cy="130" rx="55" ry="43" fill="url(#fg3)" style="transform:scale(0); transform-origin:200px 130px;"/>
-                <ellipse class="lf" cx="200" cy="108" rx="44" ry="35" fill="url(#fg1)" style="transform:scale(0); transform-origin:200px 108px;"/>
-                <ellipse class="lf" cx="185" cy="90"  rx="35" ry="28" fill="url(#fg2)" style="transform:scale(0); transform-origin:185px 90px;"/>
-                <ellipse class="lf" cx="215" cy="88"  rx="35" ry="28" fill="url(#fg4)" style="transform:scale(0); transform-origin:215px 88px;"/>
-                <ellipse class="lf" cx="200" cy="72"  rx="28" ry="22" fill="url(#fg3)" style="transform:scale(0); transform-origin:200px 72px;"/>
-
-                <!-- Brilhos / luzes nas folhas -->
-                <ellipse cx="190" cy="138" rx="20" ry="14" fill="#86efac" opacity="0.25" filter="url(#leafBlur)"/>
-                <ellipse cx="148" cy="168" rx="16" ry="10" fill="#4ade80" opacity="0.20" filter="url(#leafBlur)"/>
-                <ellipse cx="252" cy="168" rx="16" ry="10" fill="#4ade80" opacity="0.20" filter="url(#leafBlur)"/>
-            </g>
-
-            <!-- Linha de chão -->
-            <ellipse cx="200" cy="872" rx="80" ry="8" fill="#064E3B" opacity="0.15"/>
-        </svg>
-    </div>
-
     <!-- WhatsApp Chat Widget -->
     <div id="whatsappWidget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
         <div id="chatWindow" class="hidden bg-white rounded-2xl shadow-2xl w-80 md:w-96 mb-4 overflow-hidden border border-forest/10 transform transition-all duration-300 origin-bottom-right">
             <div class="bg-forest p-4 flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <!-- Substituído o ícone pela imagem PNG no chat -->
+                    <!-- Logo no chat -->
                     <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center overflow-hidden">
                         <img src="Logo.png" alt="Menezes Eco Consult" class="w-8 h-8 object-contain">
                     </div>
@@ -1018,7 +591,7 @@
             
             <div id="chatMessages" class="h-80 overflow-y-auto p-4 bg-gray-50 space-y-4">
                 <div class="flex items-start gap-2">
-                    <!-- Substituído o ícone pela imagem PNG na mensagem do chat -->
+                    <!-- Logo na mensagem do chat -->
                     <div class="w-8 h-8 bg-forest rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                         <img src="Logo.png" alt="Menezes" class="w-6 h-6 object-contain">
                     </div>
@@ -1051,9 +624,8 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center space-x-2">
-                    <!-- Substituído o ícone pela imagem PNG no footer -->
-                    <img src="Logo.png" alt="Menezes Eco Consult" class="h-8 w-auto">
-                    <span class="font-serif text-lg font-semibold text-white">Menezes Eco Consult</span>
+                    <!-- Logo no footer -->
+                    <img src="Logo.png" alt="Menezes Eco Consult" class="h-10 w-auto">
                 </div>
                 <div class="flex items-center space-x-8 text-sm text-white/60">
                     <a href="mailto:contato@menezesecoconsult.com" class="hover:text-teal-accent transition-colors flex items-center gap-2">
@@ -1090,75 +662,6 @@
             if (window.pageYOffset > 100) { nb.classList.add('shadow-lg','bg-white/80'); }
             else { nb.classList.remove('shadow-lg','bg-white/80'); }
         });
-
-        // ─────────────────────────────────────────
-        //  ÁRVORE ORGÂNICA — animação por scroll
-        // ─────────────────────────────────────────
-        const trunk      = document.getElementById('trunkSolid');
-        const trunkHL    = document.getElementById('trunkHighlight');
-        const roots      = document.getElementById('roots');
-        const branches   = document.getElementById('branches');
-        const leavesLow  = document.getElementById('leaves-low');
-        const leavesMid  = document.getElementById('leaves-mid');
-        const leavesHigh = document.getElementById('leaves-high');
-        const leavesTop  = document.getElementById('leaves-top');
-        const treeContainer = document.getElementById('treeContainer');
-
-        const TRUNK_LEN  = 1200;
-        const TRUNK_HL   = 900;
-
-        function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-        function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
-
-        function growLeaves(container, progress, delay = 0) {
-            const p = clamp((progress - delay) / (1 - delay), 0, 1);
-            container.style.opacity = Math.min(p * 2, 1);
-            container.querySelectorAll('.lf').forEach((el, i) => {
-                const lp = clamp((p - i * 0.02) * 1.4, 0, 1);
-                const s  = easeOut(lp);
-                el.style.transform = `scale(${s})`;
-            });
-        }
-
-        function updateTree() {
-            const scrollH = document.documentElement.scrollHeight - window.innerHeight;
-            const raw     = Math.min(window.scrollY / scrollH, 1);
-            // Cresce mais rápido — completa a 80% do scroll
-            const sp      = clamp(raw / 0.8, 0, 1);
-            const g       = easeOut(sp);
-
-            // Tronco
-            trunk.style.strokeDashoffset  = TRUNK_LEN  * (1 - g);
-            trunkHL.style.strokeDashoffset = TRUNK_HL  * (1 - g);
-            trunkHL.style.opacity = g * 0.5;
-
-            // Raízes
-            roots.style.opacity = g > 0.05 ? Math.min((g - 0.05) * 10, 1) : 0;
-
-            // Ramos
-            if (g > 0.2) {
-                const bp = clamp((g - 0.2) / 0.4, 0, 1);
-                branches.style.opacity = easeOut(bp);
-            } else {
-                branches.style.opacity = 0;
-            }
-
-            // Folhagem em cascata
-            if (g > 0.30) growLeaves(leavesLow,  g, 0.30);
-            if (g > 0.40) growLeaves(leavesMid,   g, 0.40);
-            if (g > 0.52) growLeaves(leavesHigh,  g, 0.52);
-            if (g > 0.65) growLeaves(leavesTop,   g, 0.65);
-
-            // Fade out perto do footer
-            if (raw > 0.9) {
-                treeContainer.style.opacity = 1 - (raw - 0.9) * 10;
-            } else {
-                treeContainer.style.opacity = 1;
-            }
-        }
-
-        window.addEventListener('scroll', updateTree, { passive: true });
-        updateTree();
 
         // ─────────────────────────────────────────
         //  WhatsApp Chat
@@ -1262,4 +765,3 @@
     </script>
 </body>
 </html>
-
