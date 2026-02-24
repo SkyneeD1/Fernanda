@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menezes Eco Consult | Engenharia Ambiental Premium</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -34,30 +37,30 @@
             }
         }
     </script>
-    
+
     <style>
         body {
             background-color: #F8FAF9;
             color: #334155;
         }
-        
+
         .glass-nav {
             background: #064E3B;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .text-gradient {
             background: linear-gradient(135deg, #064E3B 0%, #2DD4BF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .hero-abstract {
             background: linear-gradient(135deg, rgba(6, 78, 59, 0.05) 0%, rgba(45, 212, 191, 0.1) 100%);
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-abstract::before {
             content: '';
             position: absolute;
@@ -69,41 +72,41 @@
             border-radius: 50%;
             filter: blur(40px);
         }
-        
+
         .grid-pattern {
-            background-image: 
+            background-image:
                 linear-gradient(rgba(6, 78, 59, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(6, 78, 59, 0.03) 1px, transparent 1px);
             background-size: 40px 40px;
         }
-        
+
         .bento-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .bento-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 40px -15px rgba(6, 78, 59, 0.15);
         }
-        
+
         .industry-item {
             transition: all 0.3s ease;
             filter: grayscale(30%);
             opacity: 0.8;
         }
-        
+
         .industry-item:hover {
             filter: grayscale(0%);
             opacity: 1;
             transform: translateY(-4px);
         }
-        
+
         .glow-button {
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .glow-button::before {
             content: '';
             position: absolute;
@@ -111,111 +114,240 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .glow-button:hover::before {
             left: 100%;
         }
-        
+
         .glow-button:hover {
             box-shadow: 0 0 30px rgba(45, 212, 191, 0.6);
             transform: translateY(-2px);
         }
-        
+
         .comparison-row {
             transition: background-color 0.3s ease;
         }
-        
+
         .comparison-row:hover {
             background-color: rgba(6, 78, 59, 0.02);
         }
-        
+
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease-out;
         }
-        
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
-        
+
         .float-element {
             animation: float 6s ease-in-out infinite;
         }
 
         @keyframes dash-flow {
-            to { stroke-dashoffset: -20; }
+            to {
+                stroke-dashoffset: -20;
+            }
         }
+
         @keyframes blink-dot {
-            0%, 100% { opacity: 1; }
-            50%       { opacity: 0.2; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
         }
+
         @keyframes scan-line {
-            0%   { transform: translateY(0); opacity: 0.8; }
-            100% { transform: translateY(120px); opacity: 0; }
+            0% {
+                transform: translateY(0);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(120px);
+                opacity: 0;
+            }
         }
+
         @keyframes pulse-ring {
-            0%   { r: 4; opacity: 0.8; }
-            100% { r: 14; opacity: 0; }
+            0% {
+                r: 4;
+                opacity: 0.8;
+            }
+
+            100% {
+                r: 14;
+                opacity: 0;
+            }
         }
+
         @keyframes rise-bar {
-            from { transform: scaleY(0); }
-            to   { transform: scaleY(1); }
+            from {
+                transform: scaleY(0);
+            }
+
+            to {
+                transform: scaleY(1);
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                r: 4;
+                opacity: 0.8;
+            }
+
+            100% {
+                r: 14;
+                opacity: 0;
+            }
+        }
+
+        @keyframes rise-bar {
+            from {
+                transform: scaleY(0);
+            }
+
+            to {
+                transform: scaleY(1);
+            }
         }
 
         .flow-line {
             stroke-dasharray: 8 4;
             animation: dash-flow 1.5s linear infinite;
         }
+
         .scan {
             animation: scan-line 2s ease-in infinite;
         }
+
         .pulse-ring {
             animation: pulse-ring 1.8s ease-out infinite;
         }
+
         .bar-anim {
             transform-origin: bottom;
-            animation: rise-bar 1s cubic-bezier(0.34,1.56,0.64,1) both;
+            animation: rise-bar 1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
         }
-        .bar-anim:nth-child(1) { animation-delay: 0.1s; }
-        .bar-anim:nth-child(2) { animation-delay: 0.25s; }
-        .bar-anim:nth-child(3) { animation-delay: 0.4s; }
-        .bar-anim:nth-child(4) { animation-delay: 0.55s; }
-        .bar-anim:nth-child(5) { animation-delay: 0.7s; }
 
-        .blink { animation: blink-dot 1.2s ease infinite; }
-        
+        .bar-anim:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .bar-anim:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+
+        .bar-anim:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .bar-anim:nth-child(4) {
+            animation-delay: 0.55s;
+        }
+
+        .bar-anim:nth-child(5) {
+            animation-delay: 0.7s;
+        }
+
+        .blink {
+            animation: blink-dot 1.2s ease infinite;
+        }
+
+        /* PERSPECTIVA E EFEITO 3D DO CARTÃO */
+        .flip-card {
+            background-color: transparent;
+            width: 320px;
+            height: 320px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        @media (min-width: 1024px) {
+            .flip-card {
+                width: 420px;
+                height: 420px;
+            }
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 40px 100px -20px rgba(6, 78, 59, 0.25);
+        }
+
+        .flip-card-front {
+            background: white;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        .flip-card-back {
+            background-color: #064E3B;
+            color: white;
+            transform: rotateY(180deg);
+            padding: 2rem;
+            flex-direction: column;
+            border: 1px solid rgba(45, 212, 191, 0.3);
+        }
+
+        .hero-logo-image {
+            max-width: 85%;
+            height: auto;
+            filter: drop-shadow(0 15px 25px rgba(6, 78, 59, 0.1));
+        }
+
         /* Estilo para a logo - SEM FILTRO */
         .logo-image {
             height: 90px;
             width: auto;
             object-fit: contain;
-        }
-        
-        /* Container da logo grande no hero */
-        .hero-logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            padding: 2rem;
-        }
-        
-        .hero-logo-image {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            filter: drop-shadow(0 20px 30px rgba(6, 78, 59, 0.15));
         }
 
         /* Links do menu no header escuro */
@@ -223,7 +355,7 @@
             color: rgba(255, 255, 255, 0.8);
             transition: color 0.3s ease;
         }
-        
+
         .nav-link:hover {
             color: white;
         }
@@ -233,44 +365,46 @@
         }
     </style>
 </head>
+
 <body class="font-sans antialiased overflow-x-hidden">
 
     <!-- Navigation - Agora na mesma cor do footer (forest #064E3B) -->
-<nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-            <div class="flex items-center">
-                <!-- Logo SEM filtro - cores originais -->
-                <img src="Logo.png" alt="Menezes Eco Consult" class="logo-image">
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <!-- Logo SEM filtro - cores originais -->
+                    <img src="Logo.png" alt="Menezes Eco Consult" class="logo-image">
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#servicos" class="nav-link text-sm font-medium">Serviços</a>
+                    <a href="#metodo" class="nav-link text-sm font-medium">O Método</a>
+                    <a href="#industrias" class="nav-link text-sm font-medium">Indústrias</a>
+                    <!-- Botão alterado para BRANCO com texto forest -->
+                    <a href="#contato"
+                        class="px-6 py-2.5 bg-white text-forest text-sm font-medium rounded-full hover:bg-opacity-90 transition-all shadow-inner-soft">
+                        Consultoria Express
+                    </a>
+                </div>
+
+                <button class="md:hidden mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6 text-white"></i>
+                </button>
             </div>
-            
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#servicos" class="nav-link text-sm font-medium">Serviços</a>
-                <a href="#metodo" class="nav-link text-sm font-medium">O Método</a>
-                <a href="#industrias" class="nav-link text-sm font-medium">Indústrias</a>
-                <!-- Botão alterado para BRANCO com texto forest -->
-                <a href="#contato" class="px-6 py-2.5 bg-white text-forest text-sm font-medium rounded-full hover:bg-opacity-90 transition-all shadow-inner-soft">
-                    Consultoria Express
-                </a>
+        </div>
+
+        <!-- Mobile Menu - Também ajustado para a cor forest -->
+        <div class="hidden md:hidden bg-forest border-t border-white/10" id="mobile-menu">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#servicos" class="block text-white/80 hover:text-white">Serviços</a>
+                <a href="#metodo" class="block text-white/80 hover:text-white">O Método</a>
+                <a href="#industrias" class="block text-white/80 hover:text-white">Indústrias</a>
+                <!-- Link do mobile menu alterado para BRANCO -->
+                <a href="#contato" class="block text-white font-medium">Consultoria Express</a>
             </div>
-            
-            <button class="md:hidden mobile-menu-btn" id="mobile-menu-btn">
-                <i data-lucide="menu" class="w-6 h-6 text-white"></i>
-            </button>
         </div>
-    </div>
-    
-    <!-- Mobile Menu - Também ajustado para a cor forest -->
-    <div class="hidden md:hidden bg-forest border-t border-white/10" id="mobile-menu">
-        <div class="px-6 py-4 space-y-3">
-            <a href="#servicos" class="block text-white/80 hover:text-white">Serviços</a>
-            <a href="#metodo" class="block text-white/80 hover:text-white">O Método</a>
-            <a href="#industrias" class="block text-white/80 hover:text-white">Indústrias</a>
-            <!-- Link do mobile menu alterado para BRANCO -->
-            <a href="#contato" class="block text-white font-medium">Consultoria Express</a>
-        </div>
-    </div>
-</nav>
+    </nav>
 
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
@@ -278,29 +412,35 @@
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <!-- Left Content -->
                 <div class="space-y-8 z-10 reveal active">
-                    <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/50 rounded-full border border-forest/10">
+                    <div
+                        class="inline-flex items-center space-x-2 px-4 py-2 bg-white/50 rounded-full border border-forest/10">
                         <span class="w-2 h-2 bg-teal-accent rounded-full animate-pulse"></span>
-                        <span class="text-xs font-medium text-forest uppercase tracking-wider">Consultoria Premium</span>
+                        <span class="text-xs font-medium text-forest uppercase tracking-wider">Consultoria
+                            Premium</span>
                     </div>
-                    
+
                     <h1 class="font-serif text-5xl lg:text-7xl font-medium text-forest leading-[1.1] tracking-tight">
                         Engenharia Ambiental que <span class="italic text-slate-custom">valoriza</span> seu patrimônio
                     </h1>
-                    
+
                     <p class="text-lg lg:text-xl text-slate-custom leading-relaxed max-w-lg font-light">
-                        Segurança jurídica absoluta e maximização de ativos através da excelência técnica em licenciamento e gestão ambiental.
+                        Segurança jurídica absoluta e maximização de ativos através da excelência técnica em
+                        licenciamento e gestão ambiental.
                     </p>
-                    
+
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="#contato" class="inline-flex items-center justify-center px-8 py-4 bg-forest text-white rounded-2xl font-medium hover:shadow-lg hover:shadow-forest/20 transition-all duration-300 group">
+                        <a href="#contato"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-forest text-white rounded-2xl font-medium hover:shadow-lg hover:shadow-forest/20 transition-all duration-300 group">
                             <span>Iniciar Diagnóstico</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            <i data-lucide="arrow-right"
+                                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="#metodo" class="inline-flex items-center justify-center px-8 py-4 border border-forest/20 text-forest rounded-2xl font-medium hover:bg-forest/5 transition-all duration-300">
+                        <a href="#metodo"
+                            class="inline-flex items-center justify-center px-8 py-4 border border-forest/20 text-forest rounded-2xl font-medium hover:bg-forest/5 transition-all duration-300">
                             Conhecer Metodologia
                         </a>
                     </div>
-                    
+
                     <div class="flex items-center space-x-6 pt-8 text-sm text-slate-custom">
                         <div class="flex items-center space-x-2">
                             <i data-lucide="shield-check" class="w-5 h-5 text-teal-accent"></i>
@@ -312,40 +452,74 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Right Visual — Logo grande no centro -->
                 <div class="relative lg:h-[600px] flex items-center justify-center reveal active">
                     <div class="absolute inset-0 hero-abstract rounded-3xl grid-pattern"></div>
-                    
+
                     <div class="relative z-10 w-full h-full flex items-center justify-center">
-                        <div class="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-teal-accent/20 to-forest/10 rounded-full blur-3xl float-element"></div>
-                        <div class="absolute bottom-20 left-10 w-48 h-48 bg-gradient-to-tr from-forest/10 to-teal-accent/20 rounded-full blur-2xl float-element" style="animation-delay: 2s;"></div>
-                        
-                        <!-- Container com a logo grande -->
-                        <div class="relative w-80 h-80 lg:w-[420px] lg:h-[420px]">
-                            <div class="absolute inset-0 border-2 border-forest/10 rounded-3xl transform rotate-3"></div>
-                            <div class="absolute inset-0 bg-white/60 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/60 overflow-hidden hero-logo-container">
-                                <img src="Logo2.png" alt="Menezes Eco Consult" class="hero-logo-image">
-                            </div>
-                            
-                            <!-- Floating Stats sobrepostos -->
-                            <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur rounded-2xl p-3 shadow-lg border border-white/60">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <p class="text-xs text-slate-custom uppercase tracking-wider">Projetos Ativos</p>
-                                        <p class="text-2xl font-serif font-semibold text-forest">+500</p>
+                        <div
+                            class="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-teal-accent/20 to-forest/10 rounded-full blur-3xl float-element">
+                        </div>
+                        <div class="absolute bottom-20 left-10 w-48 h-48 bg-gradient-to-tr from-forest/10 to-teal-accent/20 rounded-full blur-2xl float-element"
+                            style="animation-delay: 2s;"></div>
+
+                        <!-- Cartão 3D Flippable -->
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <!-- Frente: Logo + Stats -->
+                                <div class="flip-card-front">
+                                    <!-- Efeito de borda girada atrás do conteúdo da frente -->
+                                    <div
+                                        class="absolute inset-0 border-2 border-forest/10 rounded-[2.5rem] transform rotate-3 -z-10">
                                     </div>
-                                    <div class="h-10 w-px bg-forest/10"></div>
-                                    <div>
-                                        <p class="text-xs text-slate-custom uppercase tracking-wider">Taxa de Aprovação</p>
-                                        <p class="text-2xl font-serif font-semibold text-forest">99.8%</p>
+                                    <div class="relative w-full h-full flex flex-col items-center justify-center p-8">
+                                        <img src="Logo2.png" alt="Menezes Eco Consult" class="hero-logo-image mb-12">
+
+                                        <!-- Stats sobrepostos na frente -->
+                                        <div
+                                            class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-forest/5">
+                                            <div class="flex justify-between items-center text-left">
+                                                <div>
+                                                    <p
+                                                        class="text-[10px] text-slate-custom uppercase tracking-widest leading-none mb-1.5 font-bold">
+                                                        Projetos Ativos</p>
+                                                    <p class="text-2xl font-serif font-bold text-forest">+500</p>
+                                                </div>
+                                                <div class="h-10 w-px bg-forest/10"></div>
+                                                <div>
+                                                    <p
+                                                        class="text-[10px] text-slate-custom uppercase tracking-widest leading-none mb-1.5 font-bold">
+                                                        Sucesso</p>
+                                                    <p class="text-2xl font-serif font-bold text-forest">99.8%</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <!-- Verso: Mensagem Legal -->
+                                <div class="flip-card-back">
+                                    <div
+                                        class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mb-8 border border-white/20">
+                                        <i data-lucide="leaf" class="w-10 h-10 text-teal-accent"></i>
+                                    </div>
+                                    <h3 class="font-serif text-3xl mb-6 italic text-white">Compromisso Real</h3>
+                                    <p class="text-white/90 text-lg font-light leading-relaxed max-w-[280px]">
+                                        Transformamos desafios ambientais em segurança jurídica e alto valor para o seu
+                                        patrimônio.
+                                    </p>
+                                    <div class="mt-10 flex gap-3">
+                                        <div class="w-2 h-2 bg-teal-accent rounded-full animate-bounce"></div>
+                                        <div class="w-2 h-2 bg-teal-accent rounded-full animate-bounce"
+                                            style="animation-delay: 0.2s"></div>
+                                        <div class="w-2 h-2 bg-teal-accent rounded-full animate-bounce"
+                                            style="animation-delay: 0.4s"></div>
+                                    </div>
+                                    <div class="absolute bottom-4 text-[10px] uppercase tracking-widest text-white/40">
+                                        Menezes Eco Consult © 2026</div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="absolute -top-4 -right-4 w-20 h-20 border border-teal-accent/30 rounded-full flex items-center justify-center">
-                            <i data-lucide="trending-up" class="w-8 h-8 text-teal-accent"></i>
                         </div>
                     </div>
                 </div>
@@ -358,43 +532,57 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <span class="text-teal-accent font-medium text-sm uppercase tracking-widest">Nossos Serviços</span>
-                <h2 class="font-serif text-4xl lg:text-5xl text-forest mt-4 mb-6">Soluções integradas para complexidade ambiental</h2>
-                <p class="text-slate-custom text-lg font-light">Cada projeto recebe atenção categórica e soluções customizadas que superam as expectativas regulatórias.</p>
+                <h2 class="font-serif text-4xl lg:text-5xl text-forest mt-4 mb-6">Soluções integradas para complexidade
+                    ambiental</h2>
+                <p class="text-slate-custom text-lg font-light">Cada projeto recebe attention categórica e soluções
+                    customizadas que superam as expectativas regulatórias.</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
                 <!-- Card Licenciamento Ambiental -->
-                <div class="lg:col-span-2 lg:row-span-2 bento-card bg-white rounded-3xl p-8 shadow-inner-soft border border-forest/5 relative overflow-hidden group reveal">
-                    <div class="absolute top-0 right-0 w-40 h-40 bg-teal-accent/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <div
+                    class="lg:col-span-2 lg:row-span-2 bento-card bg-white rounded-3xl p-8 shadow-inner-soft border border-forest/5 relative overflow-hidden group reveal">
+                    <div
+                        class="absolute top-0 right-0 w-40 h-40 bg-teal-accent/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700">
+                    </div>
                     <div class="relative z-10 h-full flex flex-col">
-                        <div class="w-14 h-14 bg-forest/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-forest group-hover:text-white transition-colors duration-300">
+                        <div
+                            class="w-14 h-14 bg-forest/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-forest group-hover:text-white transition-colors duration-300">
                             <i data-lucide="file-check" class="w-7 h-7 text-forest group-hover:text-white"></i>
                         </div>
                         <h3 class="font-serif text-2xl text-forest mb-3">Licenciamento Ambiental</h3>
                         <p class="text-slate-custom text-sm leading-relaxed mb-6 flex-grow">
-                            Tramitação estratégica junto aos órgãos ambientais federais, estaduais e municipais. Antecipação de demandas e gestão de riscos regulatórios desde a concepção do empreendimento.
+                            Tramitação estratégica junto aos órgãos ambientais federais, estaduais e municipais.
+                            Antecipação de demandas e gestão de riscos regulatórios desde a concepção do empreendimento.
                         </p>
-                        <div class="flex items-center text-forest font-medium text-sm group-hover:translate-x-2 transition-transform cursor-pointer">
+                        <div
+                            class="flex items-center text-forest font-medium text-sm group-hover:translate-x-2 transition-transform cursor-pointer">
                             <span>Explorar Processo</span>
                             <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
                         </div>
                     </div>
                 </div>
-                
-                <div class="bento-card bg-white rounded-3xl p-6 shadow-inner-soft border border-forest/5 relative overflow-hidden group reveal">
-                    <div class="w-12 h-12 bg-forest/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-forest group-hover:text-white transition-colors duration-300">
+
+                <div
+                    class="bento-card bg-white rounded-3xl p-6 shadow-inner-soft border border-forest/5 relative overflow-hidden group reveal">
+                    <div
+                        class="w-12 h-12 bg-forest/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-forest group-hover:text-white transition-colors duration-300">
                         <i data-lucide="recycle" class="w-6 h-6 text-forest group-hover:text-white"></i>
                     </div>
                     <h3 class="font-serif text-xl text-forest mb-2">Gestão de Resíduos</h3>
-                    <p class="text-slate-custom text-sm leading-relaxed">Logística reversa, planos de gerenciamento e destinação ambientalmente adequada.</p>
+                    <p class="text-slate-custom text-sm leading-relaxed">Logística reversa, planos de gerenciamento e
+                        destinação ambientalmente adequada.</p>
                 </div>
-                
-                <div class="bento-card bg-white rounded-3xl p-6 shadow-inner-soft border border-forest/5 relative overflow-hidden group reveal">
-                    <div class="w-12 h-12 bg-forest/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-forest group-hover:text-white transition-colors duration-300">
+
+                <div
+                    class="bento-card bg-white rounded-3xl p-6 shadow-inner-soft border border-forest/5 relative overflow-hidden group reveal">
+                    <div
+                        class="w-12 h-12 bg-forest/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-forest group-hover:text-white transition-colors duration-300">
                         <i data-lucide="award" class="w-6 h-6 text-forest group-hover:text-white"></i>
                     </div>
                     <h3 class="font-serif text-xl text-forest mb-2">Auditoria ISO</h3>
-                    <p class="text-slate-custom text-sm leading-relaxed">Certificações 14001 e implementação de sistemas de gestão ambiental corporativa.</p>
+                    <p class="text-slate-custom text-sm leading-relaxed">Certificações 14001 e implementação de sistemas
+                        de gestão ambiental corporativa.</p>
                 </div>
             </div>
         </div>
@@ -407,32 +595,37 @@
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <span class="text-teal-accent font-medium text-sm uppercase tracking-widest">Experiência Setorial</span>
                 <h2 class="font-serif text-4xl lg:text-5xl text-forest mt-4 mb-6">Indústrias que atendemos</h2>
-                <p class="text-slate-custom text-lg font-light">Soluções especializadas para os mais diversos segmentos da economia.</p>
+                <p class="text-slate-custom text-lg font-light">Soluções especializadas para os mais diversos segmentos
+                    da economia.</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
-                <div class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
+                <div
+                    class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
                     <div class="w-20 h-20 bg-teal-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="store" class="w-10 h-10 text-forest"></i>
                     </div>
                     <h3 class="font-serif text-xl text-forest mb-2">Comércio</h3>
                     <p class="text-sm text-slate-custom">Shoppings, centros comerciais e redes varejistas</p>
                 </div>
-                <div class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
+                <div
+                    class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
                     <div class="w-20 h-20 bg-teal-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="utensils" class="w-10 h-10 text-forest"></i>
                     </div>
                     <h3 class="font-serif text-xl text-forest mb-2">Indústria Alimentícia</h3>
                     <p class="text-sm text-slate-custom">Frigoríficos, laticínios e processamento de alimentos</p>
                 </div>
-                <div class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
+                <div
+                    class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
                     <div class="w-20 h-20 bg-teal-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="car" class="w-10 h-10 text-forest"></i>
                     </div>
                     <h3 class="font-serif text-xl text-forest mb-2">Automotiva</h3>
                     <p class="text-sm text-slate-custom">Montadoras, autopeças e concessionárias</p>
                 </div>
-                <div class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
+                <div
+                    class="industry-item bg-off-white rounded-2xl p-8 text-center border border-forest/5 hover:shadow-xl transition-all cursor-pointer">
                     <div class="w-20 h-20 bg-teal-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="building" class="w-10 h-10 text-forest"></i>
                     </div>
@@ -440,7 +633,7 @@
                     <p class="text-sm text-slate-custom">Rodovias, ferrovias, portos e aeroportos</p>
                 </div>
             </div>
-            
+
             <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 text-center reveal">
                 <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-full bg-forest/5 flex items-center justify-center">
@@ -480,48 +673,69 @@
         <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <span class="text-teal-accent font-medium text-sm uppercase tracking-widest">Por que a Menezes?</span>
-                <h2 class="font-serif text-4xl lg:text-5xl text-forest mt-4 mb-6">O Método Menezes vs. Consultorias Convencionais</h2>
-                <p class="text-slate-custom text-lg font-light">Uma abordagem que combina rigor técnico, segurança processual e visão estratégica de negócios.</p>
+                <h2 class="font-serif text-4xl lg:text-5xl text-forest mt-4 mb-6">O Método Menezes vs. Consultorias
+                    Convencionais</h2>
+                <p class="text-slate-custom text-lg font-light">Uma abordagem que combina rigor técnico, segurança
+                    processual e visão estratégica de negócios.</p>
             </div>
-            
+
             <div class="bg-white rounded-3xl shadow-inner-soft border border-forest/5 overflow-hidden reveal">
                 <div class="grid grid-cols-3 gap-4 p-6 lg:p-8 border-b border-forest/10 bg-white/50">
                     <div class="col-span-1">
                         <span class="text-sm font-medium text-slate-custom uppercase tracking-wider">Critério</span>
                     </div>
                     <div class="col-span-1 text-center">
-                        <span class="text-sm font-bold text-slate-custom/40 uppercase tracking-wider">Consultorias Comuns</span>
+                        <span class="text-sm font-bold text-slate-custom/40 uppercase tracking-wider">Consultorias
+                            Comuns</span>
                     </div>
                     <div class="col-span-1 text-center bg-forest/5 rounded-xl -my-2 py-2">
                         <span class="text-sm font-bold text-forest uppercase tracking-wider">Método Menezes</span>
                     </div>
                 </div>
-                
+
                 <div class="divide-y divide-forest/5">
                     <div class="comparison-row grid grid-cols-3 gap-4 p-6 lg:p-8 items-center">
-                        <div class="col-span-1"><span class="font-medium text-forest">Segurança no Licenciamento</span></div>
-                        <div class="col-span-1 text-center"><span class="text-slate-custom">Sujeito a autuações e condicionantes imprevistas</span></div>
-                        <div class="col-span-1 text-center"><span class="font-semibold text-forest flex items-center justify-center gap-2">Processo 100% Seguro<i data-lucide="shield" class="w-4 h-4 text-teal-accent"></i></span></div>
+                        <div class="col-span-1"><span class="font-medium text-forest">Segurança no Licenciamento</span>
+                        </div>
+                        <div class="col-span-1 text-center"><span class="text-slate-custom">Sujeito a autuações e
+                                condicionantes imprevistas</span></div>
+                        <div class="col-span-1 text-center"><span
+                                class="font-semibold text-forest flex items-center justify-center gap-2">Processo 100%
+                                Seguro<i data-lucide="shield" class="w-4 h-4 text-teal-accent"></i></span></div>
                     </div>
                     <div class="comparison-row grid grid-cols-3 gap-4 p-6 lg:p-8 items-center bg-white/30">
                         <div class="col-span-1"><span class="font-medium text-forest">Interação com Órgãos</span></div>
-                        <div class="col-span-1 text-center"><span class="text-slate-custom">Reativa (resposta a demandas)</span></div>
-                        <div class="col-span-1 text-center"><span class="font-semibold text-forest flex items-center justify-center gap-2">Proativa &amp; Estratégica<i data-lucide="check-circle" class="w-4 h-4 text-teal-accent"></i></span></div>
+                        <div class="col-span-1 text-center"><span class="text-slate-custom">Reativa (resposta a
+                                demandas)</span></div>
+                        <div class="col-span-1 text-center"><span
+                                class="font-semibold text-forest flex items-center justify-center gap-2">Proativa &
+                                Estratégica<i data-lucide="check-circle" class="w-4 h-4 text-teal-accent"></i></span>
+                        </div>
                     </div>
                     <div class="comparison-row grid grid-cols-3 gap-4 p-6 lg:p-8 items-center">
                         <div class="col-span-1"><span class="font-medium text-forest">Documentação Técnica</span></div>
-                        <div class="col-span-1 text-center"><span class="text-slate-custom">Padrão regulatório básico</span></div>
-                        <div class="col-span-1 text-center"><span class="font-semibold text-forest flex items-center justify-center gap-2">Excelência em Documentação<i data-lucide="file-check" class="w-4 h-4 text-teal-accent"></i></span></div>
+                        <div class="col-span-1 text-center"><span class="text-slate-custom">Padrão regulatório
+                                básico</span></div>
+                        <div class="col-span-1 text-center"><span
+                                class="font-semibold text-forest flex items-center justify-center gap-2">Excelência em
+                                Documentação<i data-lucide="file-check" class="w-4 h-4 text-teal-accent"></i></span>
+                        </div>
                     </div>
                     <div class="comparison-row grid grid-cols-3 gap-4 p-6 lg:p-8 items-center bg-white/30">
                         <div class="col-span-1"><span class="font-medium text-forest">Análise de Riscos</span></div>
-                        <div class="col-span-1 text-center"><span class="text-slate-custom">Superficial ou terceirizada</span></div>
-                        <div class="col-span-1 text-center"><span class="font-semibold text-forest flex items-center justify-center gap-2">Completa &amp; Detalhada<i data-lucide="search" class="w-4 h-4 text-teal-accent"></i></span></div>
+                        <div class="col-span-1 text-center"><span class="text-slate-custom">Superficial ou
+                                terceirizada</span></div>
+                        <div class="col-span-1 text-center"><span
+                                class="font-semibold text-forest flex items-center justify-center gap-2">Completa &
+                                Detalhada<i data-lucide="search" class="w-4 h-4 text-teal-accent"></i></span></div>
                     </div>
                     <div class="comparison-row grid grid-cols-3 gap-4 p-6 lg:p-8 items-center">
                         <div class="col-span-1"><span class="font-medium text-forest">Valorização do Ativo</span></div>
-                        <div class="col-span-1 text-center"><span class="text-slate-custom">Foco apenas em compliance</span></div>
-                        <div class="col-span-1 text-center"><span class="font-semibold text-forest flex items-center justify-center gap-2">Estratégia de Valor<i data-lucide="trending-up" class="w-4 h-4 text-teal-accent"></i></span></div>
+                        <div class="col-span-1 text-center"><span class="text-slate-custom">Foco apenas em
+                                compliance</span></div>
+                        <div class="col-span-1 text-center"><span
+                                class="font-semibold text-forest flex items-center justify-center gap-2">Estratégia de
+                                Valor<i data-lucide="trending-up" class="w-4 h-4 text-teal-accent"></i></span></div>
                     </div>
                 </div>
             </div>
@@ -530,25 +744,34 @@
 
     <!-- CTA -->
     <section id="contato" class="bg-forest relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(45,212,191,0.1)_0%,_transparent_50%)]"></div>
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20"></div>
-        
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(45,212,191,0.1)_0%,_transparent_50%)]">
+        </div>
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20">
+        </div>
+
         <div class="max-w-4xl mx-auto px-6 lg:px-8 py-24 lg:py-32 relative z-10">
             <div class="text-center mb-12 reveal">
                 <span class="text-teal-accent font-medium text-sm uppercase tracking-widest">Diagnóstico Express</span>
-                <h2 class="font-serif text-4xl lg:text-5xl text-white mt-4 mb-6">Pronto para desbloquear o potencial do seu empreendimento?</h2>
-                <p class="text-white/70 text-lg font-light max-w-2xl mx-auto">Inicie uma conversa pelo WhatsApp e receba uma análise prévia gratuita em até 48 horas.</p>
+                <h2 class="font-serif text-4xl lg:text-5xl text-white mt-4 mb-6">Pronto para desbloquear o potencial do
+                    seu empreendimento?</h2>
+                <p class="text-white/70 text-lg font-light max-w-2xl mx-auto">Inicie uma conversa pelo WhatsApp e receba
+                    uma análise prévia gratuita em até 48 horas.</p>
             </div>
-            
+
             <div class="max-w-2xl mx-auto text-center reveal">
-                <button onclick="openWhatsAppChat()" class="w-full md:w-auto glow-button bg-teal-accent text-forest font-semibold px-12 py-5 rounded-2xl hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 text-lg mx-auto">
+                <button onclick="openWhatsAppChat()"
+                    class="w-full md:w-auto glow-button bg-teal-accent text-forest font-semibold px-12 py-5 rounded-2xl hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 text-lg mx-auto">
                     <i data-lucide="message-circle" class="w-6 h-6"></i>
                     <span>Iniciar Diagnóstico pelo WhatsApp</span>
                 </button>
-                <p class="text-white/40 text-xs text-center mt-4">Atendimento personalizado com resposta em até 2 horas durante horário comercial.</p>
+                <p class="text-white/40 text-xs text-center mt-4">Atendimento personalizado com resposta em até 2 horas
+                    durante horário comercial.</p>
             </div>
-            
-            <div class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-sm reveal">
+
+            <div
+                class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-sm reveal">
                 <div class="flex items-center gap-2">
                     <i data-lucide="shield" class="w-4 h-4 text-teal-accent"></i>
                     <span>Dados criptografados SSL</span>
@@ -563,7 +786,8 @@
 
     <!-- WhatsApp Chat Widget -->
     <div id="whatsappWidget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chatWindow" class="hidden bg-white rounded-2xl shadow-2xl w-80 md:w-96 mb-4 overflow-hidden border border-forest/10 transform transition-all duration-300 origin-bottom-right">
+        <div id="chatWindow"
+            class="hidden bg-white rounded-2xl shadow-2xl w-80 md:w-96 mb-4 overflow-hidden border border-forest/10 transform transition-all duration-300 origin-bottom-right">
             <div class="bg-forest p-4 flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <!-- Logo no chat - SEM filtro -->
@@ -582,34 +806,40 @@
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
             </div>
-            
+
             <div id="chatMessages" class="h-80 overflow-y-auto p-4 bg-gray-50 space-y-4">
                 <div class="flex items-start gap-2">
                     <!-- Logo na mensagem do chat - SEM filtro -->
-                    <div class="w-8 h-8 bg-forest rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <div
+                        class="w-8 h-8 bg-forest rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                         <img src="Logo.png" alt="Menezes" class="w-6 h-6 object-contain">
                     </div>
                     <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
-                        <p class="text-sm text-slate-custom">Olá! 👋 Bem-vindo à Menezes Eco Consult. Qual é o seu nome?</p>
+                        <p class="text-sm text-slate-custom">Olá! 👋 Bem-vindo à Menezes Eco Consult. Qual é o seu nome?
+                        </p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="p-4 bg-white border-t border-gray-100">
                 <form id="chatForm" class="flex gap-2" onsubmit="handleChatSubmit(event)">
-                    <input type="text" id="chatInput" placeholder="Digite sua mensagem..." 
-                           class="flex-1 px-4 py-3 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-teal-accent/50 text-slate-custom"
-                           autocomplete="off">
-                    <button type="submit" class="w-12 h-12 bg-teal-accent rounded-full flex items-center justify-center text-forest hover:bg-forest hover:text-white transition-all duration-300 shadow-lg">
+                    <input type="text" id="chatInput" placeholder="Digite sua mensagem..."
+                        class="flex-1 px-4 py-3 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-teal-accent/50 text-slate-custom"
+                        autocomplete="off">
+                    <button type="submit"
+                        class="w-12 h-12 bg-teal-accent rounded-full flex items-center justify-center text-forest hover:bg-forest hover:text-white transition-all duration-300 shadow-lg">
                         <i data-lucide="send" class="w-5 h-5"></i>
                     </button>
                 </form>
             </div>
         </div>
-        
-        <button onclick="toggleWhatsAppChat()" id="whatsappButton" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
+
+        <button onclick="toggleWhatsAppChat()" id="whatsappButton"
+            class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group">
             <i data-lucide="message-circle" class="w-6 h-6"></i>
-            <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap text-sm font-medium">Falar no WhatsApp</span>
+            <span
+                class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap text-sm font-medium">Falar
+                no WhatsApp</span>
         </button>
     </div>
 
@@ -622,11 +852,13 @@
                     <img src="Logo.png" alt="Menezes Eco Consult" class="h-10 w-auto">
                 </div>
                 <div class="flex items-center space-x-8 text-sm text-white/60">
-                    <a href="mailto:contato@menezesecoconsult.com" class="hover:text-teal-accent transition-colors flex items-center gap-2">
+                    <a href="mailto:contato@menezesecoconsult.com"
+                        class="hover:text-teal-accent transition-colors flex items-center gap-2">
                         <i data-lucide="mail" class="w-4 h-4"></i>
                         contato@menezesecoconsult.com
                     </a>
-                    <a href="tel:+551199999999" class="hover:text-teal-accent transition-colors flex items-center gap-2">
+                    <a href="tel:+551199999999"
+                        class="hover:text-teal-accent transition-colors flex items-center gap-2">
                         <i data-lucide="phone" class="w-4 h-4"></i>
                         +55 (11) 97374-7197
                     </a>
@@ -638,25 +870,25 @@
 
     <script>
         lucide.createIcons();
-        
+
         // Mobile Menu
         document.getElementById('mobile-menu-btn').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
-        
+
         // Scroll Reveal
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-        
+
         // Navbar - Ajustado para manter a cor forest mesmo com scroll
         window.addEventListener('scroll', () => {
             const nb = document.getElementById('navbar');
-            if (window.pageYOffset > 100) { 
-                nb.classList.add('shadow-lg'); 
-            } else { 
-                nb.classList.remove('shadow-lg'); 
+            if (window.pageYOffset > 100) {
+                nb.classList.add('shadow-lg');
+            } else {
+                nb.classList.remove('shadow-lg');
             }
         });
 
@@ -699,7 +931,7 @@
             const c = document.getElementById('chatMessages');
             const d = document.createElement('div');
             d.className = `flex items-start gap-2 ${isUser ? 'flex-row-reverse' : ''}`;
-            
+
             if (isUser) {
                 d.innerHTML = `<div class="w-8 h-8 bg-teal-accent rounded-full flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-4 h-4 text-forest"></i></div>
                                <div class="bg-teal-accent/20 p-3 rounded-2xl rounded-tr-none shadow-sm max-w-[85%]"><p class="text-sm text-slate-custom">${text}</p></div>`;
@@ -709,7 +941,7 @@
                                </div>
                                <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]"><p class="text-sm text-slate-custom">${text}</p></div>`;
             }
-            
+
             c.appendChild(d);
             c.scrollTop = c.scrollHeight;
             lucide.createIcons();
@@ -759,5 +991,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>
